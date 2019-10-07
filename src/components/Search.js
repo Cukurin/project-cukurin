@@ -71,6 +71,7 @@ class Search extends Component {
         </div>
         <div className="map">
           <GoogleMapReact
+              bootstrapURLKeys={{ key:`AIzaSyD1wQpra-e6iK-j19fBusFwluEheVy5QRk`}}
               center={center}
               zoom={12}
               >
