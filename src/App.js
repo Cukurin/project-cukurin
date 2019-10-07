@@ -4,6 +4,7 @@ import './App.css';
 import {MuiThemeProvider, createMuiTheme} from '@material-ui/core'
 import {amber} from '@material-ui/core/colors'
 import NavTabs from './components/navbar'
+import Search from './components/Search';
 
 const theme = createMuiTheme({
   palette: {
@@ -15,7 +16,6 @@ function App() {
   return (
     <MuiThemeProvider theme = {theme}>
     <div className="App">
-      <NavTabs/>
       <SignUp />
     </div>
     </MuiThemeProvider>

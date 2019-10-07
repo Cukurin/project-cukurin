@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
+import { Link } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
@@ -68,9 +69,9 @@ export default function SimpleTabs() {
             justify="space-between"
             alignItems="center"
           >
-            <Tab label="item one" {...a11yProps(0)} />
-            <Tab label="Login" {...a11yProps(1)} />
-            <Tab label="Search" {...a11yProps(2)} />
+            <Tab label="item one" to="/" {...a11yProps(0)} />
+            <Tab label="Login" component={Link} to="/search" {...a11yProps(1)} />
+            <Tab label="Search" component={Link} to="/search" {...a11yProps(2)} />
             
           </Grid>
         </Tabs>
@@ -82,7 +83,7 @@ export default function SimpleTabs() {
       <TabPanel value={value} index={1}>
         
       </TabPanel>
-      <TabPanel value={Search} index={2}>
+      <TabPanel vaSearchlue={Search} index={2}>
         
       </TabPanel>
     </div>
