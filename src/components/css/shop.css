@@ -1,0 +1,17 @@
+.shop {
+  flex-basis: calc(50% - 20px);
+  margin: 10px;
+  cursor: pointer;
+}
+.shop:hover{
+  opacity: 0.5;
+}
+.shop-picture {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+.shop-title {
+  margin-top: 10px;
+  font-weight: bold;
+}

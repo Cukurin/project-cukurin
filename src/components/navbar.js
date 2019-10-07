@@ -7,6 +7,7 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
+import Search from './Search'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -67,8 +68,9 @@ export default function SimpleTabs() {
             justify="space-between"
             alignItems="center"
           >
-            <Tab label="Item One" {...a11yProps(0)} />
+            <Tab label="item one" {...a11yProps(0)} />
             <Tab label="Login" {...a11yProps(1)} />
+            <Tab label="Search" {...a11yProps(2)} />
             
           </Grid>
         </Tabs>
@@ -78,6 +80,9 @@ export default function SimpleTabs() {
         
       </TabPanel>
       <TabPanel value={value} index={1}>
+        
+      </TabPanel>
+      <TabPanel value={Search} index={2}>
         
       </TabPanel>
     </div>
