@@ -97,6 +97,15 @@ class Register extends React.Component {
                 onChange={this.handleInputChange}
               />
             </div>
+            <div className="form-group">
+              <input
+                type="number"
+                name="phoneNumber"
+                className="form-control"
+                placeholder="Phone Number"
+                onChange={this.handleInputChange}
+              />
+            </div>
             <br />
             <button
               className="btn btn-bold btn-block btn-primary"
