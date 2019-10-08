@@ -17,7 +17,7 @@ function App() {
   return (
     <MuiThemeProvider theme = {theme}>
     <div className="App">
-      <SignUp />
+      <Popular />
     </div>
     </MuiThemeProvider>
   );

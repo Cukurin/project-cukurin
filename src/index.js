@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route, withRouter } from "react-router-dom";
-
+import Login from './components/login'
 import './index.css';
 import App from './App';
+import Register from './components/register'
 import Search from './components/Search'
 import Navbar from './components/navbar'
 import * as serviceWorker from './serviceWorker';
@@ -13,7 +14,9 @@ const Main = withRouter(({location}) => {
     <div>
       {location.pathname !== "/login" && location.pathname !== "/register" && <Navbar/>}
       <Route exact path="/" component={App} />
+      <Route path="/login" component={Login} />
       <Route path="/search" component={Search} />
+      <Route path="/register" component={Register}/>
     </div>
   )
 })

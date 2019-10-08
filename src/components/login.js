@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 class Login extends React.Component {
   constructor(){
@@ -63,7 +65,7 @@ class Login extends React.Component {
                 <span className="custom-control-indicator" />
                 <span className="custom-control-description">Remember me</span>
               </label>
-              <a className="text-muted hover-primary fs-13" href="#">
+              <a className="text-muted hover-primary fs-13" href="google.com">
                 Forgot password?
               </a>
             </div>
