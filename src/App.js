@@ -19,6 +19,7 @@ function App() {
   return (
     <MuiThemeProvider theme = {theme}>
     <div className="App">
+      <Service />
       <Popular />
       <ServiceHome/>
     </div>
