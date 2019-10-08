@@ -4,6 +4,7 @@ import './css/search.css';
 import Shop from './Shop'
 import Marker from './marker'
 
+
 class Search extends Component {
   constructor(props) {
     super(props);
@@ -12,6 +13,7 @@ class Search extends Component {
       allshops: [],
       selectedShop: null,
       search: '',
+      yesIWantToUseGoogleMapApiInternals:true
     };
   }
   //example fetch FAKE API
@@ -40,6 +42,7 @@ class Search extends Component {
     })
   }
   render() {
+    
     let center = {
       lat: 48.8566,
       lng: 2.3522
@@ -73,6 +76,9 @@ class Search extends Component {
           <GoogleMapReact
               center={center}
               zoom={12}
+              bootstrapURLKeys={{ key: process.env.REACT_APP_API_KEY }}
+              yesIWantToUseGoogleMapApiInternals
+
               
               >
                 {this.state.shops.map((shop) => {
