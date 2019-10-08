@@ -5,6 +5,7 @@ import {amber} from '@material-ui/core/colors'
 import Popular from './components/popular';
 import ServiceHome from './components/serviceHome'
 import Service from './components/serviceHome'
+import Header from './components/Header'
 // import NavTabs from './components/navbar'
 // import Search from './components/Search';
 // import Popular from './components/popular'
@@ -20,6 +21,7 @@ function App() {
   return (
     <MuiThemeProvider theme = {theme}>
     <div className="App">
+      <Header/>
       <Service />
       <Popular />
       <ServiceHome/>
