@@ -1,24 +1,53 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 import {
-  Card, CardImg, CardText, CardBody, CardLink,
-  CardTitle, CardSubtitle
+  Card, Button, CardImg, CardTitle, CardText, CardGroup,
+  CardSubtitle, CardBody
 } from 'reactstrap';
+
 
 const Popular = (props) => {
   return (
-    <div>
-      <Card>
-        <CardBody>
-          <CardTitle>Card title</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
-        </CardBody>
-        <CardImg top width="100%" src="../assets/pp.jpeg" alt="Card image cap" />        <CardBody>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-          <CardLink href="#">Card Link</CardLink>
-          <CardLink href="#">Another Link</CardLink>
-        </CardBody>
-      </Card>
-    </div>
+    <div className="container">
+    <CardGroup>
+    <Card style={{margin: '10px', border: '1px solid black'}}>
+      <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
+      <CardBody>
+        <CardTitle>Ian Shop</CardTitle>
+        <CardSubtitle>Bekasi</CardSubtitle>
+        <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</CardText>
+        <Button className="btn btn-warning">Booking</Button>
+      </CardBody>
+    </Card>
+    <Card style={{margin: '10px', border: '1px solid black'}}>
+      <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
+      <CardBody>
+        <CardTitle>Nico Shop</CardTitle>
+        <CardSubtitle>Jakarta Utara</CardSubtitle>
+        <CardText>This card has supporting text below as a natural lead-in to additional content.</CardText>
+        <Button className="btn btn-warning">Booking</Button>
+      </CardBody>
+    </Card>
+    <Card style={{margin: '10px', border: '1px solid black'}}>
+      <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
+      <CardBody>
+        <CardTitle>Ian Shop</CardTitle>
+        <CardSubtitle>Bekasi</CardSubtitle>
+        <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</CardText>
+        <Button className="btn btn-warning">Booking</Button>
+      </CardBody>
+    </Card>
+    <Card style={{margin: '10px', border: '1px solid black'}}>
+      <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
+      <CardBody>
+        <CardTitle>Auzan Shop</CardTitle>
+        <CardSubtitle>Jakarta Barat</CardSubtitle>
+        <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</CardText>
+        <Button className="btn btn-warning">Booking</Button>
+      </CardBody>
+    </Card>
+  </CardGroup>
+  </div>
   );
 };
 

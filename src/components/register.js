@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import axios from 'axios'
+// import axios from 'axios'
 import { validateAll } from 'indicative'
 
-const api = process.env.REACT_APP_API_URL
+// const api = process.env.REACT_APP_API_URL
 
 class Register extends React.Component {
   constructor(){
