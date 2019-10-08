@@ -83,7 +83,7 @@ export default function SimpleTabs() {
       <TabPanel value={value} index={1}>
         
       </TabPanel>
-      <TabPanel vaSearchlue={Search} index={2}>
+      <TabPanel value={Search} index={2}>
         
       </TabPanel>
     </div>

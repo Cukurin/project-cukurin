@@ -11,7 +11,7 @@ class Search extends Component {
       shops: [],
       allshops: [],
       selectedShop: null,
-      search: ''
+      search: '',
     };
   }
   //example fetch FAKE API
@@ -69,11 +69,11 @@ class Search extends Component {
            })}
           </div>
         </div>
-        <div className="map">
+        <div className="map" style={{width: '100%'}}>
           <GoogleMapReact
-              bootstrapURLKeys={{ key:`AIzaSyD1wQpra-e6iK-j19fBusFwluEheVy5QRk`}}
               center={center}
               zoom={12}
+              
               >
                 {this.state.shops.map((shop) => {
              return <Marker 
