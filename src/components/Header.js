@@ -19,8 +19,8 @@ class Header extends Component {
                   <form>
                 <div class="form-group center">
                   <label for="search"></label>
-                  <input type="text" className="form-control" id="search" aria-describedby="emailHelp" placeholder="Search..."/>
-                  <small id="emailHelp" className="form-text text-muted">Search your best Barbershop</small>
+                  <input type="text" className="form-control search" id="search" aria-describedby="search" placeholder="Search..."/>
+                  <small id="search" className="form-text text-muted">Search your best Barbershop</small>
                 </div>
               </form>
                 </div>

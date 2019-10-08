@@ -15,3 +15,8 @@
   position: relative;
   top: 50px;
 }
+.search {
+  width: 700px;
+  text-align: center;
+  margin: auto;
+}
