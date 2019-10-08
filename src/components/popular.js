@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
+import './css/popular.css'
 import {
   Card, Button, CardImg, CardTitle, CardText, CardGroup,
   CardSubtitle, CardBody
@@ -11,7 +12,7 @@ const Popular = (props) => {
     <div className="container">
       <h1>Popular with Cukurin Users</h1>
     <CardGroup>
-    <Card style={{margin: '10px', border: '1px solid black'}}>
+    <Card className="cardpack" style={{margin: '10px', border: '1px solid black'}}>
       <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
       <CardBody>
         <CardTitle>Ian Shop</CardTitle>
@@ -24,7 +25,7 @@ const Popular = (props) => {
         <Button className="btn btn-warning">Read More</Button>
       </CardBody>
     </Card>
-    <Card style={{margin: '10px', border: '1px solid black'}}>
+    <Card className="cardpack" style={{margin: '10px', border: '1px solid black'}}>
       <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
       <CardBody>
         <CardTitle>Nico Shop</CardTitle>
@@ -37,7 +38,7 @@ const Popular = (props) => {
         <Button className="btn btn-warning">Read More</Button>
       </CardBody>
     </Card>
-    <Card style={{margin: '10px', border: '1px solid black'}}>
+    <Card className="cardpack" style={{margin: '10px', border: '1px solid black'}}>
       <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
       <CardBody>
         <CardTitle>Ian Shop</CardTitle>
@@ -50,7 +51,7 @@ const Popular = (props) => {
         <Button className="btn btn-warning">Read More</Button>
       </CardBody>
     </Card>
-    <Card style={{margin: '10px', border: '1px solid black'}}>
+    <Card className="cardpack" style={{margin: '10px', border: '1px solid black'}}>
       <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
       <CardBody>
         <CardTitle>Auzan Shop</CardTitle>

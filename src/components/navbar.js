@@ -1,4 +1,5 @@
 import React from "react";
+import './css/popular.css'
 import {
   Collapse,
   Navbar,
@@ -30,7 +31,7 @@ export default class Example extends React.Component {
       <div>
         <Navbar style={{ backgroundColor: "#2D2A2A" }} light expand="md">
           <NavbarBrand href="/" style={{ color: "#F48E16" }}>
-            Cukurin
+            <h2>Cukurin</h2>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>

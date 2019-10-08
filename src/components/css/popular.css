@@ -1,3 +1,7 @@
+body {
+  font-family: 'Roboto Mono', monospace;
+
+}
 .checked {
   color: orange;
 }
@@ -5,5 +9,15 @@ h1 {
   text-align: left;
   margin-bottom: 20px;
   margin-left: 20px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  font-family: 'Roboto Mono', monospace;
+
+}
+.cardpack {
+  -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.77); 
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.77);
+}
+
+h2 {
+  font-family: 'Mansalva', cursive;
+  font-size: 46px;
 }
