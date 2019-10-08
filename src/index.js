@@ -7,6 +7,7 @@ import App from './App';
 import Register from './components/register'
 import Search from './components/Search'
 import Navbar from './components/navbar'
+import Footer from './components/footer'
 import * as serviceWorker from './serviceWorker';
 
 const Main = withRouter(({location}) => {
@@ -17,6 +18,7 @@ const Main = withRouter(({location}) => {
       <Route path="/login" component={Login} />
       <Route path="/search" component={Search} />
       <Route path="/register" component={Register}/>
+      {location.pathname !== "/login" && location.pathname !== "/register" && <Footer/>}
     </div>
   )
 })
