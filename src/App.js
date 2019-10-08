@@ -3,6 +3,7 @@ import './App.css';
 import {MuiThemeProvider, createMuiTheme} from '@material-ui/core'
 import {amber} from '@material-ui/core/colors'
 import Popular from './components/popular';
+import ServiceHome from './components/serviceHome'
 // import NavTabs from './components/navbar'
 // import Search from './components/Search';
 // import Popular from './components/popular'
@@ -19,6 +20,7 @@ function App() {
     <MuiThemeProvider theme = {theme}>
     <div className="App">
       <Popular />
+      <ServiceHome/>
     </div>
     </MuiThemeProvider>
   );
