@@ -38,14 +38,15 @@ export default class Example extends React.Component {
             <Nav className="ml-auto" navbar>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret style={{ color: "#F48E16" }}>
-                  account
+                  Account
                 </DropdownToggle>
 
                 <DropdownMenu right style={{ backgroundColor: "#2D2A2A" }}>
-                  <DropdownItem style={{ color: "#F48E16" }}>login</DropdownItem>
-                  <DropdownItem style={{ color: "#F48E16" }}>register</DropdownItem>
+                  <DropdownItem style={{ color: "#F48E16" }}>Login</DropdownItem>
+                  <DropdownItem style={{ color: "#F48E16" }}>Register</DropdownItem>
+                  <DropdownItem style={{ color: "#F48E16" }}>Search</DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem style={{ color: "#F48E16"  }}>logout</DropdownItem>
+                  <DropdownItem style={{ color: "#F48E16"  }}>Logout</DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>

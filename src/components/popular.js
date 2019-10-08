@@ -9,7 +9,7 @@ import {
 
 const Popular = (props) => {
   return (
-    <div className="container">
+    <div className="container-fluid">
       <h1>Popular with Cukurin Users</h1>
     <CardGroup>
     <Card className="cardpack" style={{margin: '10px', border: '1px solid black'}}>

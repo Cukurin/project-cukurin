@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Background from '../assets/bgtop.jpg';
+import './css/header.css'
 
 let sectionStyle = {
   width: '100%',
@@ -11,10 +12,22 @@ let sectionStyle = {
 class Header extends Component {
   render() {
     return(
-      
-        <section style= {sectionStyle}>
-
-        </section>
+        <div>
+            <section style= {sectionStyle}>
+                <div className="heroimage">
+                  <h1>Changing the World with our Search Engine</h1>
+                  <form>
+                <div class="form-group center">
+                  <label for="search"></label>
+                  <input type="text" className="form-control" id="search" aria-describedby="emailHelp" placeholder="Search..."/>
+                  <small id="emailHelp" className="form-text text-muted">Search your best Barbershop</small>
+                </div>
+              </form>
+                </div>
+             
+              
+            </section>
+        </div>
     )
   }
 }

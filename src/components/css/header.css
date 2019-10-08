@@ -1,4 +1,17 @@
 .heroimage {
-  width: 100%;
-  height: 100vh;
+  font-size: 36px;
+  background-color: rgba(9, 9, 9, 0.5);
+  height: 300px;
+  color: white;
+  text-align: center;
+  position: relative;
+  top: 350px;
+}
+
+.heroimage h1 {
+  font-size: 36px;
+  color: white;
+  text-align: center;
+  position: relative;
+  top: 50px;
 }
