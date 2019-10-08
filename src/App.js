@@ -1,5 +1,4 @@
 import React from 'react';
-import SignUp from './components/signup'
 import './App.css';
 import {MuiThemeProvider, createMuiTheme} from '@material-ui/core'
 import {amber} from '@material-ui/core/colors'
