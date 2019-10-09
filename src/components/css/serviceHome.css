@@ -38,6 +38,11 @@
   margin: 0 35px;
   color: white
 }
+.listService:hover {
+  background-color: rgba(9, 9, 9, 0.5);
+  color: orange;
+  border: 1px solid orange;
+}
 
 .serviceImage1{
   content: url('../../assets/man-haircut-512.png');
