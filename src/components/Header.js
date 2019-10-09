@@ -17,8 +17,8 @@ class Header extends Component {
                 <div className="heroimage">
                   <h1>Changing the World with our Search Engine</h1>
                   <form>
-                <div class="form-group center">
-                  <label for="search"></label>
+                <div className="form-group center">
+                  <label htmlFor="search"></label>
                   <input type="text" className="form-control search" id="search" aria-describedby="search" placeholder="Search..."/>
                   <small id="search" className="form-text text-muted">Search your best Barbershop</small>
                 </div>

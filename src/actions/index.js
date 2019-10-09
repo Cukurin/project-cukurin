@@ -2,7 +2,9 @@ import Axios from "axios";
 // import Cookie from "js-cookie";
 
 export const RegisterUser = (values, history) => {
-  Axios.post(`http://localhost:3909`, values)
+  console.log(history,'history');
+  
+  Axios.post(`http://localhost:3909/user`, values)
     .then(result => {
       history.push("/login");
       // console.log(result);

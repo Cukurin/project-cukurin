@@ -1,87 +1,37 @@
 import React from "react";
-import { Link } from "react-router-dom";
-<<<<<<< HEAD
-// import axios from 'axios'
-import { validateAll } from 'indicative'
-import {RegisterUser} from '../actions'
-import {connect} from "react-redux"
-=======
-import axios from 'axios'
->>>>>>> 3debcec6177267b095debd7c1c050e166e2f5b63
-
-
-const api = "http://localhost:3909"
+import { Link, withRouter } from "react-router-dom";
+import { RegisterUser } from "../actions";
+import { connect } from "react-redux";
 
 class Register extends React.Component {
-  constructor(props){
-    console.log(props, 'props')
-    super(props)
+  constructor(props) {
+    console.log(props, "props");
+    super(props);
     this.state = {
-      username: '',
-      email: '',
-      password: '',
-      passwordConfirm: '',
-      phoneNumber:""
-    }
-    this.handleSubmit = this.handleSubmit.bind(this)
+      username: "",
+      email: "",
+      password: "",
+      passwordConfirm: "",
+      phoneNumber: ""
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleInputChange = (event) => {
+  handleInputChange = event => {
     this.setState({
       ...this.state,
       [event.target.name]: event.target.value
-    })
-  }
+    });
+  };
 
-  handleSubmit = (event) => {
-    
-    event.preventDefault()
-    
-<<<<<<< HEAD
-  
-
-    let data = this.state
-    const rules = {
-      username: 'required|string',
-      email: 'required|email',
-      password: 'required|string|min:6'
-    }
-    
-
-    validateAll(data, rules)
-      .then(() => {})
-      .catch(error => {
-        console.log(error);
-      })
-    
-    this.props.dispatch(RegisterUser(data))
-    // props.dispatch(RegisterUser(this.state, props.history))
-    // axios
-    //   .post(`${api}/user`, this.state)
-    //   .then(result => {
-    //     console.log(result)
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //   })
-=======
-    const data = this.state
-    console.log(data);
-    
-    axios
-      .post(`${api}/user`, this.state)
-      .then(result => {
-        console.log(result);
-          
-      })
-      
-      .catch(error => {
-        console.log(error);
-      })
->>>>>>> 3debcec6177267b095debd7c1c050e166e2f5b63
-  }
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.dispatch(RegisterUser(this.state,this.props.history));
+  };
 
   render() {
+    console.log(this.props);
+    
     return (
       <div
         className="mh-fullscreen bg-img center-vh p-20"
@@ -115,7 +65,6 @@ class Register extends React.Component {
                 placeholder="Email address"
                 onChange={this.handleInputChange}
                 defaultValue={this.state.email}
-                
               />
             </div>
             <div className="form-group">
@@ -169,4 +118,4 @@ class Register extends React.Component {
     );
   }
 }
-export default connect() (RegisterUser);
+export default withRouter(connect()(Register));
