@@ -7,7 +7,7 @@ class Shop extends React.Component {
     this.props.selectShop(this.props.shop)
   }
   render() {
-    const title = this.props.shop.price + this.props.shop.priceCurrency + " - " + this.props.shop.name;
+    const title = this.props.shop.name;
     const style = {
       backgroundImage: `url('${this.props.shop.imageUrl}')`
     };
@@ -15,7 +15,14 @@ class Shop extends React.Component {
     return(
       <div className="shop" onClick={this.handleClick}>
         <div className="shop-picture" style={style}></div>
-        <div className="shop-title"></div>
+        <div className="shop-title">
+        <span className="fa fa-star checked"></span>
+          <span className="fa fa-star checked"></span>
+          <span className="fa fa-star checked"></span>
+          <span className="fa fa-star checked"></span>
+          <span className="fa fa-star checked"></span>
+        </div>
+        
         {title}
       </div>
     );

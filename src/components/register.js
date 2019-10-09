@@ -1,11 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
 // import axios from 'axios'
 import { validateAll } from 'indicative'
 import {RegisterUser} from '../actions'
 import {connect} from "react-redux"
+=======
+import axios from 'axios'
+>>>>>>> 3debcec6177267b095debd7c1c050e166e2f5b63
 
-// const api = process.env.REACT_APP_API_URL
+
+const api = "http://localhost:3909"
 
 class Register extends React.Component {
   constructor(props){
@@ -29,8 +34,10 @@ class Register extends React.Component {
   }
 
   handleSubmit = (event) => {
+    
     event.preventDefault()
     
+<<<<<<< HEAD
   
 
     let data = this.state
@@ -57,6 +64,21 @@ class Register extends React.Component {
     //   .catch(error => {
     //     console.log(error);
     //   })
+=======
+    const data = this.state
+    console.log(data);
+    
+    axios
+      .post(`${api}/user`, this.state)
+      .then(result => {
+        console.log(result);
+          
+      })
+      
+      .catch(error => {
+        console.log(error);
+      })
+>>>>>>> 3debcec6177267b095debd7c1c050e166e2f5b63
   }
 
   render() {
@@ -78,6 +100,7 @@ class Register extends React.Component {
                 type="text"
                 name="username"
                 className="form-control"
+                required
                 placeholder="Username"
                 onChange={this.handleInputChange}
                 defaultValue={this.state.username}
@@ -85,7 +108,8 @@ class Register extends React.Component {
             </div>
             <div className="form-group">
               <input
-                type="text"
+                type="email"
+                required
                 name="email"
                 className="form-control"
                 placeholder="Email address"
@@ -97,6 +121,7 @@ class Register extends React.Component {
             <div className="form-group">
               <input
                 type="password"
+                required
                 name="password"
                 className="form-control"
                 placeholder="Password"
@@ -107,6 +132,7 @@ class Register extends React.Component {
             <div className="form-group">
               <input
                 type="password"
+                required
                 name="passwordConfirm"
                 className="form-control"
                 placeholder="Password (confirm)"
@@ -118,6 +144,7 @@ class Register extends React.Component {
               <input
                 type="number"
                 name="phoneNumber"
+                required
                 className="form-control"
                 placeholder="Phone Number"
                 onChange={this.handleInputChange}
