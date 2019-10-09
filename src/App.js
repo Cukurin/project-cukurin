@@ -6,7 +6,7 @@ import Header from './components/Header'
 // import NavTabs from './components/navbar'
 // import Search from './components/Search';
 // import Popular from './components/popular'
-
+import Register from './components/register'
 
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
       <Header/>
       <Popular />
       <ServiceHome/>
+      <Register/>
     </div>
   
   );

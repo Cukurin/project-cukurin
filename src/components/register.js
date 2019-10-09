@@ -2,41 +2,53 @@ import React from "react";
 import { Link } from "react-router-dom";
 // import axios from 'axios'
 import { validateAll } from 'indicative'
+import {RegisterUser} from '../actions'
+import {connect} from "react-redux"
 
 // const api = process.env.REACT_APP_API_URL
 
 class Register extends React.Component {
-  constructor(){
-    super()
+  constructor(props){
+    console.log(props, 'props')
+    super(props)
     this.state = {
       username: '',
       email: '',
       password: '',
-      passwordConfirm: ''
+      passwordConfirm: '',
+      phoneNumber:""
     }
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleInputChange = (event) => {
     this.setState({
+      ...this.state,
       [event.target.name]: event.target.value
     })
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
+    
+  
 
-    const data = this.state
+    let data = this.state
     const rules = {
       username: 'required|string',
       email: 'required|email',
       password: 'required|string|min:6'
     }
+    
 
     validateAll(data, rules)
       .then(() => {})
       .catch(error => {
         console.log(error);
       })
+    
+    this.props.dispatch(RegisterUser(data))
+    // props.dispatch(RegisterUser(this.state, props.history))
     // axios
     //   .post(`${api}/user`, this.state)
     //   .then(result => {
@@ -68,6 +80,7 @@ class Register extends React.Component {
                 className="form-control"
                 placeholder="Username"
                 onChange={this.handleInputChange}
+                defaultValue={this.state.username}
               />
             </div>
             <div className="form-group">
@@ -77,6 +90,8 @@ class Register extends React.Component {
                 className="form-control"
                 placeholder="Email address"
                 onChange={this.handleInputChange}
+                defaultValue={this.state.email}
+                
               />
             </div>
             <div className="form-group">
@@ -86,6 +101,7 @@ class Register extends React.Component {
                 className="form-control"
                 placeholder="Password"
                 onChange={this.handleInputChange}
+                defaultValue={this.state.password}
               />
             </div>
             <div className="form-group">
@@ -95,6 +111,7 @@ class Register extends React.Component {
                 className="form-control"
                 placeholder="Password (confirm)"
                 onChange={this.handleInputChange}
+                defaultValue={this.state.passwordConfirm}
               />
             </div>
             <div className="form-group">
@@ -104,6 +121,7 @@ class Register extends React.Component {
                 className="form-control"
                 placeholder="Phone Number"
                 onChange={this.handleInputChange}
+                defaultValue={this.state.phoneNumber}
               />
             </div>
             <br />
@@ -124,4 +142,4 @@ class Register extends React.Component {
     );
   }
 }
-export default Register;
+export default connect() (RegisterUser);
