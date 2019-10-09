@@ -16,11 +16,11 @@ const Popular = (props) => {
       <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
       <CardBody>
         <CardTitle>Ian Shop</CardTitle>
-        <CardSubtitle><span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span></CardSubtitle>
+        <CardSubtitle><span className="fa fa-star checked"></span>
+          <span className="fa fa-star checked"></span>
+          <span className="fa fa-star checked"></span>
+          <span className="fa fa-star checked"></span>
+          <span className="fa fa-star checked"></span></CardSubtitle>
         <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</CardText>
         <Button className="btn btn-warning">Read More</Button>
       </CardBody>
@@ -29,11 +29,11 @@ const Popular = (props) => {
       <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
       <CardBody>
         <CardTitle>Nico Shop</CardTitle>
-        <CardSubtitle><span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span></CardSubtitle>
+        <CardSubtitle><span className="fa fa-star checked"></span>
+          <span className="fa fa-star checked"></span>
+          <span className="fa fa-star checked"></span>
+          <span className="fa fa-star checked"></span>
+          <span className="fa fa-star checked"></span></CardSubtitle>
         <CardText>This card has supporting text below as a natural lead-in to additional content.</CardText>
         <Button className="btn btn-warning">Read More</Button>
       </CardBody>
@@ -42,11 +42,11 @@ const Popular = (props) => {
       <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
       <CardBody>
         <CardTitle>Ian Shop</CardTitle>
-        <CardSubtitle><span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span></CardSubtitle>
+        <CardSubtitle><span className="fa fa-star checked"></span>
+          <span className="fa fa-star checked"></span>
+          <span className="fa fa-star checked"></span>
+          <span className="fa fa-star checked"></span>
+          <span className="fa fa-star checked"></span></CardSubtitle>
         <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</CardText>
         <Button className="btn btn-warning">Read More</Button>
       </CardBody>
@@ -55,11 +55,11 @@ const Popular = (props) => {
       <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
       <CardBody>
         <CardTitle>Auzan Shop</CardTitle>
-        <CardSubtitle><span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span></CardSubtitle>
+        <CardSubtitle><span className="fa fa-star checked"></span>
+          <span className="fa fa-star checked"></span>
+          <span className="fa fa-star checked"></span>
+          <span className="fa fa-star checked"></span>
+          <span className="fa fa-star"></span></CardSubtitle>
         <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</CardText>
         <Button className="btn btn-warning">Read More</Button>
       </CardBody>
