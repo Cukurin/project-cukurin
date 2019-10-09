@@ -87,7 +87,7 @@ class Search extends Component {
              key={shop.name} 
              lat = {shop.lat} 
              lng={shop.lng} 
-             text={shop.price}
+             text={shop.name}
              selected={shop === this.state.selectedShop} />
            })}
           </GoogleMapReact>

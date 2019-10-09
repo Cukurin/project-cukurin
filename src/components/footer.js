@@ -1,26 +1,33 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css';
+import './css/footer.css'
 
 
 const Footer = () => {
   return (
-    <footer className="site-footer">
-      <div className="container">
-        <div className="row gap-y align-items-center">
-          
-          <div className="col-12 col-lg-6 offset-lg-3">
-          <h2>Copyright 2019</h2>
+      <div className="footer">
+        <footer className="page-footer font-small unique-color-dark pt-4">
 
-            <ul className="nav nav-primary nav-hero">
-              <li className="nav-item">
-                <Link className="nav-link" to="/">CUKURIN</Link>
+          <div className="container">
+
+            <ul className="list-unstyled list-inline text-center py-2">
+              <li className="list-inline-item">
+                <h5 className="mb-1">Register for free</h5>
+              </li>
+              <li className="list-inline-item">
+                <a href="./register.js" className="btn btn-warning">Sign up!</a>
               </li>
             </ul>
+
           </div>
-        </div>
+          <br/><br/><br/> <br/><br/><br/>
+          <div className="footer-copyright text-center py-3">© 2019 Copyright Cukurin Team
+          </div>
+
+        </footer>
       </div>
-    </footer>
+   
   )
 }
 
