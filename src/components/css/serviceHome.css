@@ -9,5 +9,5 @@ p.card-text {
 }
 
 .card:hover {
-  border: 1px solid gold;
+  background-color: darkslategrey;
 }

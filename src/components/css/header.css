@@ -15,6 +15,6 @@
   position: relative;
   top: 50px;
 }
-input[type=text] {
+input#search {
   text-align: center;
 }

@@ -12,11 +12,11 @@ const Popular = (props) => {
   return (
     <div className="container-fluid">
       <h1>Popular with Cukurin Users</h1>
-    <CardGroup className="animated bounce delay-1s">
+    <CardGroup className="animated bounce delay-2s">
     <Card className="cardpack" style={{margin: '10px', border: '1px solid black'}}>
       <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
       <CardBody>
-        <CardTitle>Ian Shop</CardTitle>
+        <CardTitle>Ian Barbershop</CardTitle>
         <CardSubtitle><span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span>
@@ -29,7 +29,7 @@ const Popular = (props) => {
     <Card className="cardpack" style={{margin: '10px', border: '1px solid black'}}>
       <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
       <CardBody>
-        <CardTitle>Nico Shop</CardTitle>
+        <CardTitle>Nico Cukur</CardTitle>
         <CardSubtitle><span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span>
@@ -42,7 +42,7 @@ const Popular = (props) => {
     <Card className="cardpack" style={{margin: '10px', border: '1px solid black'}}>
       <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
       <CardBody>
-        <CardTitle>Ian Shop</CardTitle>
+        <CardTitle>Ido BarberShop</CardTitle>
         <CardSubtitle><span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span>
@@ -55,7 +55,7 @@ const Popular = (props) => {
     <Card className="cardpack" style={{margin: '10px', border: '1px solid black'}}>
       <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
       <CardBody>
-        <CardTitle>Auzan Shop</CardTitle>
+        <CardTitle>Auzan Semir</CardTitle>
         <CardSubtitle><span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span>

@@ -28,7 +28,6 @@ class Register extends React.Component {
   }
 
   handleInputChange = event => {
-    console.log(this.state, 'state')
     this.setState({
       ...this.state,
       [event.target.name]: event.target.value
