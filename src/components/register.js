@@ -32,8 +32,10 @@ class Register extends React.Component {
     axios
       .post(`${api}/user`, this.state)
       .then(result => {
-        console.log(result)
+        console.log(result);
+          
       })
+      
       .catch(error => {
         console.log(error);
       })
@@ -58,13 +60,15 @@ class Register extends React.Component {
                 type="text"
                 name="username"
                 className="form-control"
+                required
                 placeholder="Username"
                 onChange={this.handleInputChange}
               />
             </div>
             <div className="form-group">
               <input
-                type="text"
+                type="email"
+                required
                 name="email"
                 className="form-control"
                 placeholder="Email address"
@@ -74,6 +78,7 @@ class Register extends React.Component {
             <div className="form-group">
               <input
                 type="password"
+                required
                 name="password"
                 className="form-control"
                 placeholder="Password"
@@ -83,6 +88,7 @@ class Register extends React.Component {
             <div className="form-group">
               <input
                 type="password"
+                required
                 name="passwordConfirm"
                 className="form-control"
                 placeholder="Password (confirm)"
@@ -93,6 +99,7 @@ class Register extends React.Component {
               <input
                 type="number"
                 name="phoneNumber"
+                required
                 className="form-control"
                 placeholder="Phone Number"
                 onChange={this.handleInputChange}
