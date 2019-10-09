@@ -13,12 +13,13 @@ class Search extends Component {
       allshops: [],
       selectedShop: null,
       search: '',
-      yesIWantToUseGoogleMapApiInternals:true
+      
     };
   }
   //example fetch FAKE API
   componentDidMount() {
     const url = "https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/flats.json"
+    // const url = "http://localhost:3909/barbershop"
     fetch(url) 
     .then(response => response.json())
     .then((data) => {
