@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import axios from 'axios'
-import { validateAll } from 'indicative'
+import axios from 'axios'
 
-// const api = process.env.REACT_APP_API_URL
+
+const api = "http://localhost:3909"
 
 class Register extends React.Component {
   constructor(){
@@ -23,28 +23,20 @@ class Register extends React.Component {
   }
 
   handleSubmit = (event) => {
+    
     event.preventDefault()
-
+    
     const data = this.state
-    const rules = {
-      username: 'required|string',
-      email: 'required|email',
-      password: 'required|string|min:6'
-    }
-
-    validateAll(data, rules)
-      .then(() => {})
+    console.log(data);
+    
+    axios
+      .post(`${api}/user`, this.state)
+      .then(result => {
+        console.log(result)
+      })
       .catch(error => {
         console.log(error);
       })
-    // axios
-    //   .post(`${api}/user`, this.state)
-    //   .then(result => {
-    //     console.log(result)
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //   })
   }
 
   render() {

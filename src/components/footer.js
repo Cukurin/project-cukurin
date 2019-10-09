@@ -16,7 +16,7 @@ const Footer = () => {
                 <h5 className="mb-1">Register for free</h5>
               </li>
               <li className="list-inline-item">
-                <a href="./register.js" className="btn btn-warning">Sign up!</a>
+                <a href="./register" className="btn btn-warning">Sign up!</a>
               </li>
             </ul>
 
