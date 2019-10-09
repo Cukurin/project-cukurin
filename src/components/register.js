@@ -1,13 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-<<<<<<< HEAD
 // import axios from 'axios'
 import { validateAll } from 'indicative'
 import {RegisterUser} from '../actions'
 import {connect} from "react-redux"
-=======
-import axios from 'axios'
->>>>>>> 3debcec6177267b095debd7c1c050e166e2f5b63
 
 
 const api = "http://localhost:3909"
@@ -37,7 +33,6 @@ class Register extends React.Component {
     
     event.preventDefault()
     
-<<<<<<< HEAD
   
 
     let data = this.state
@@ -64,21 +59,6 @@ class Register extends React.Component {
     //   .catch(error => {
     //     console.log(error);
     //   })
-=======
-    const data = this.state
-    console.log(data);
-    
-    axios
-      .post(`${api}/user`, this.state)
-      .then(result => {
-        console.log(result);
-          
-      })
-      
-      .catch(error => {
-        console.log(error);
-      })
->>>>>>> 3debcec6177267b095debd7c1c050e166e2f5b63
   }
 
   render() {

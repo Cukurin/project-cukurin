@@ -17,11 +17,7 @@ function App() {
       <Header/>
       <Popular />
       <ServiceHome/>
-<<<<<<< HEAD
       <Register/>
-=======
-      <Search/>
->>>>>>> 3debcec6177267b095debd7c1c050e166e2f5b63
     </div>
   
   );

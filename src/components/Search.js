@@ -45,8 +45,8 @@ class Search extends Component {
   render() {
     
     let center = {
-      lat: -6.254156,
-      lng: 106.8144
+      lat: -6.2577096,
+      lng: 106.8143932
     }
     if (this.state.selectedShop) {
       center = {
