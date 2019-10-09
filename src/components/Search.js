@@ -18,8 +18,8 @@ class Search extends Component {
   }
   //example fetch FAKE API
   componentDidMount() {
-    const url = "https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/flats.json"
-    // const url = "http://localhost:3909/barbershop"
+    // const url = "https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/flats.json"
+    const url = "http://localhost:3909/barbershop"
     fetch(url) 
     .then(response => response.json())
     .then((data) => {
@@ -45,8 +45,8 @@ class Search extends Component {
   render() {
     
     let center = {
-      lat: 48.8566,
-      lng: 2.3522
+      lat: -6.254156,
+      lng: 106.8144
     }
     if (this.state.selectedShop) {
       center = {

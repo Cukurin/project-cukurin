@@ -7,7 +7,7 @@ class Shop extends React.Component {
     this.props.selectShop(this.props.shop)
   }
   render() {
-    const title = this.props.shop.price + this.props.shop.priceCurrency + " - " + this.props.shop.name;
+    const title = this.props.shop.name;
     const style = {
       backgroundImage: `url('${this.props.shop.imageUrl}')`
     };
