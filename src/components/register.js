@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 class Register extends React.Component {
   constructor(props) {
     console.log(props, "props");
+    
     super(props);
     this.state = {
       username: "",
@@ -18,6 +19,7 @@ class Register extends React.Component {
   }
 
   handleInputChange = event => {
+    console.log(this.state, 'state')
     this.setState({
       ...this.state,
       [event.target.name]: event.target.value
@@ -30,8 +32,6 @@ class Register extends React.Component {
   };
 
   render() {
-    console.log(this.props);
-    
     return (
       <div
         className="mh-fullscreen bg-img center-vh p-20"
