@@ -1,25 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
-
+import { connect } from "react-redux"
+import { LoginUser } from "../actions";
 
 class Login extends React.Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
       username : '',
       password : ''
     }
+    this.handleSubmit= this.handleSubmit.bind(this)
   }
 
   handleInputChange = (event) => {
     this.setState({
+      ...this.state,
       [event.target.name] : event.target.value
     })
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
+    this.props.dispatch(LoginUser(this.state, this.props.history))
     console.log(this.state)
   }
 
@@ -44,6 +48,7 @@ class Login extends React.Component {
                 className="form-control"
                 placeholder="Username"
                 onChange={this.handleInputChange}
+                defaultValue={this.state.username}
               />
             </div>
             <div className="form-group">
@@ -53,6 +58,7 @@ class Login extends React.Component {
                 className="form-control"
                 placeholder="Password"
                 onChange={this.handleInputChange}
+                defaultValue={this.state.password}
               />
             </div>
             <div className="form-group flexbox py-10">
@@ -88,4 +94,4 @@ class Login extends React.Component {
   }
 };
 
-export default Login;
+export default connect() (Login);
