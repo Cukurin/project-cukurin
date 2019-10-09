@@ -12,8 +12,8 @@ const Popular = (props) => {
   return (
     <div className="container-fluid">
       <h1>Popular with Cukurin Users</h1>
-    <CardGroup className="animated bounce delay-2s">
-    <Card className="cardpack" style={{margin: '10px', border: '1px solid black'}}>
+    <CardGroup>
+    <Card className="cardpack wow bounceInDown" data-wow-duration="2s" data-wow-delay="0.5s" style={{margin: '10px', border: '1px solid black'}}>
       <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
       <CardBody>
         <CardTitle>Ian Barbershop</CardTitle>
@@ -26,7 +26,7 @@ const Popular = (props) => {
         <Link to='/search'> <Button className="btn btn-warning">Read More</Button> </Link>
       </CardBody>
     </Card>
-    <Card className="cardpack" style={{margin: '10px', border: '1px solid black'}}>
+    <Card className="cardpack wow bounceInDown" data-wow-duration="2s" data-wow-delay="1s" style={{margin: '10px', border: '1px solid black'}}>
       <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
       <CardBody>
         <CardTitle>Nico Cukur</CardTitle>
@@ -39,7 +39,7 @@ const Popular = (props) => {
         <Button className="btn btn-warning">Read More</Button>
       </CardBody>
     </Card>
-    <Card className="cardpack" style={{margin: '10px', border: '1px solid black'}}>
+    <Card className="cardpack wow bounceInDown" data-wow-duration="2s" data-wow-delay="1.5s" style={{margin: '10px', border: '1px solid black'}}>
       <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
       <CardBody>
         <CardTitle>Ido BarberShop</CardTitle>
@@ -52,7 +52,7 @@ const Popular = (props) => {
         <Button className="btn btn-warning">Read More</Button>
       </CardBody>
     </Card>
-    <Card className="cardpack" style={{margin: '10px', border: '1px solid black'}}>
+    <Card className="cardpack wow bounceInDown" data-wow-duration="2s" data-wow-delay="2s" style={{margin: '10px', border: '1px solid black'}}>
       <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
       <CardBody>
         <CardTitle>Auzan Semir</CardTitle>
