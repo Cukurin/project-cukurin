@@ -5,6 +5,7 @@ import {
   Card, Button, CardImg, CardTitle, CardText, CardGroup,
   CardSubtitle, CardBody
 } from 'reactstrap';
+import {Link} from 'react-router-dom'
 
 
 const Popular = (props) => {
@@ -22,7 +23,7 @@ const Popular = (props) => {
           <span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span></CardSubtitle>
         <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</CardText>
-        <Button className="btn btn-warning">Read More</Button>
+        <Link to='/search'> <Button className="btn btn-warning">Read More</Button> </Link>
       </CardBody>
     </Card>
     <Card className="cardpack" style={{margin: '10px', border: '1px solid black'}}>

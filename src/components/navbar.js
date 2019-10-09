@@ -11,6 +11,7 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
+import {Link} from 'react-router-dom'
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -42,8 +43,8 @@ export default class Example extends React.Component {
                 </DropdownToggle>
 
                 <DropdownMenu right style={{ backgroundColor: "#2D2A2A" }}>
-                  <DropdownItem style={{ color: "#F48E16" }}>Login</DropdownItem>
-                  <DropdownItem style={{ color: "#F48E16" }}>Register</DropdownItem>
+                  <Link to="/login"><DropdownItem style={{ color: "#F48E16" }}>Login</DropdownItem></Link>
+                  <Link to="/register"><DropdownItem style={{ color: "#F48E16" }}>Register</DropdownItem></Link>
                   <DropdownItem style={{ color: "#F48E16" }}>Search</DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem style={{ color: "#F48E16"  }}>Logout</DropdownItem>
