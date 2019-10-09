@@ -1,0 +1,26 @@
+.formHolder {
+  width: 100%;
+  height: 487px;
+}
+
+.card.card-shadowed.p-50.w-400.mb-0  {
+  background: transparent;
+}
+
+h5 {
+  font-size: 26px;
+  color: gold;
+  margin-top: 10px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+p {
+  color: white;
+}
+a.link {
+  color:gold;
+}
+
+input[type=text] {
+  color: gold;
+}
