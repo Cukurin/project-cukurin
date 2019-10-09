@@ -11,7 +11,7 @@ const Popular = (props) => {
   return (
     <div className="container-fluid">
       <h1>Popular with Cukurin Users</h1>
-    <CardGroup>
+    <CardGroup className="animated bounce delay-1s">
     <Card className="cardpack" style={{margin: '10px', border: '1px solid black'}}>
       <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
       <CardBody>

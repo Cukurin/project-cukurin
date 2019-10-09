@@ -5,6 +5,7 @@
 
 .card.card-shadowed.p-50.w-400.mb-0  {
   background: transparent;
+  border: none;
 }
 
 h5 {
@@ -14,7 +15,7 @@ h5 {
   font-family: 'Roboto Mono', monospace;
 }
 
-p {
+p.text-center.fs-13.mt-20 {
   color: white;
 }
 a.link {
@@ -23,4 +24,5 @@ a.link {
 
 input[type=text] {
   color: gold;
+  text-shadow: black;
 }

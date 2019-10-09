@@ -14,18 +14,21 @@ class Header extends Component {
     return(
         <div>
             <section style= {sectionStyle}>
+              <div className="container-fluid">
                 <div className="heroimage">
                   <h1>Changing the World with our Search Engine</h1>
                   <form>
                 <div className="form-group center">
                   <label htmlFor="search"></label>
+                  <div className="container">
                   <input type="text" className="form-control search" id="search" aria-describedby="search" placeholder="Search..."/>
+                  </div>
                   <small id="search" className="form-text text-muted">Search your best Barbershop</small>
                 </div>
               </form>
                 </div>
              
-              
+                </div>
             </section>
         </div>
     )
