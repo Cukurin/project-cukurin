@@ -30,9 +30,13 @@ export const LoginUser = (values, history) => {
       Cookie.set("token", result.data.token);
       history.push("/");
       window.location.reload();
+      console.log(result);
+      
     })
     .catch(error => {
       console.log(error);
+      
+
     });
   return {
     type: "loginUser",

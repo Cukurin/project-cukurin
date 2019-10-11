@@ -43,9 +43,9 @@ export default class Example extends React.Component {
                 </DropdownToggle>
 
                 <DropdownMenu right style={{ backgroundColor: "#2D2A2A" }}>
-                  <Link to="/login"><DropdownItem style={{ color: "#F48E16" }}>Login</DropdownItem></Link>
-                  <Link to="/register"><DropdownItem style={{ color: "#F48E16" }}>Register</DropdownItem></Link>
-                  <DropdownItem style={{ color: "#F48E16" }}>Search</DropdownItem>
+                  <Link style={{textDecoration: 'none'}} to="/login"><DropdownItem style={{ color: "#F48E16" }}>Login</DropdownItem></Link>
+                  <Link style={{textDecoration: 'none'}} to="/register"><DropdownItem style={{ color: "#F48E16" }}>Register</DropdownItem></Link>
+                  <Link style={{textDecoration: 'none'}} to ="/search"><DropdownItem style={{ color: "#F48E16" }}>Search</DropdownItem></Link>
                   <DropdownItem divider />
                   <DropdownItem style={{ color: "#F48E16"  }}>Logout</DropdownItem>
                 </DropdownMenu>
