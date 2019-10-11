@@ -11,6 +11,7 @@
     "indicative": "^7.2.1",
     "install": "^0.13.0",
     "js-cookie": "^2.2.1",
+    "jsonwebtoken": "^8.5.1",
     "npm": "^6.11.3",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",

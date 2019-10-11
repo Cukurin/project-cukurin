@@ -8,11 +8,13 @@ import Register from "./components/register";
 import Search from "./components/Search";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
+import Profile from './components/profile'
 import * as serviceWorker from "./serviceWorker";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import allReducers from "./reducer";
 import thunk from "redux-thunk";
+
 
 const Main = withRouter(({ location }) => {
   return (
@@ -23,6 +25,7 @@ const Main = withRouter(({ location }) => {
       <Route exact path="/" component={App} />
       <Route path="/login" component={Login} />
       <Route path="/search" component={Search} />
+      <Route path="/profile" component={Profile}/>
       <Route path="/register" component={Register} />
       {location.pathname !== "/login" && location.pathname !== "/register" && (
         <Footer />
