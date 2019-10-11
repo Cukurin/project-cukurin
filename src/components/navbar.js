@@ -49,11 +49,6 @@ export default class Example extends React.Component {
                 </DropdownToggle>
 
                 <DropdownMenu right style={{ backgroundColor: "#2D2A2A" }}>
-<<<<<<< HEAD
-                  <Link style={{textDecoration: 'none'}} to="/login"><DropdownItem style={{ color: "#F48E16" }}>Login</DropdownItem></Link>
-                  <Link style={{textDecoration: 'none'}} to="/register"><DropdownItem style={{ color: "#F48E16" }}>Register</DropdownItem></Link>
-                  <Link style={{textDecoration: 'none'}} to ="/search"><DropdownItem style={{ color: "#F48E16" }}>Search</DropdownItem></Link>
-=======
                   {Cookies.get("token") ? (
                     <Link to="">
                       <DropdownItem style={{ color: "#F48E16" }}>
@@ -72,10 +67,11 @@ export default class Example extends React.Component {
                       Register
                     </DropdownItem>
                   </Link>
+                  <Link to="/search">
                   <DropdownItem style={{ color: "#F48E16" }}>
                     Search
                   </DropdownItem>
->>>>>>> origin/loginNavbar
+                  </Link>
                   <DropdownItem divider />
                   <DropdownItem
                     style={{ color: "#F48E16" }}

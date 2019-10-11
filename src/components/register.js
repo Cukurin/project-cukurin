@@ -7,7 +7,7 @@ import './css/register.css'
 
 let sectionStyle = {
   width: '100%',
-  height: '487px',
+  height: '100vh',
   backgroundImage: `url(${Background})`,
   backgroundSize: 'cover',
   backgroundPosition: 'center'
@@ -42,11 +42,11 @@ class Register extends React.Component {
   render() {
     return (
       <div className="formHolder" style={sectionStyle}>
-      <div className="container">
+      <div className="container" style={{paddingTop : '150px'}}>
         <div className="mh-fullscreen bg-img center-vh p-20">
         <div
           className="card card-shadowed p-50 w-400 mb-0"
-          style={{ maxWidth: "100%" }}
+          style={{ maxWidth: "100%", background: 'rgba(2,2,2,0.6)', borderRadius:'20px' }}
         >
           <h5 className="text-uppercase text-center">Register</h5>
           <br />
