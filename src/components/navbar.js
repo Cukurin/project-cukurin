@@ -1,5 +1,5 @@
 import React from "react";
-import './css/popular.css'
+import "./css/popular.css";
 import {
   Collapse,
   Navbar,
@@ -11,30 +11,28 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-import Cookies from 'js-cookie'
+import Cookies from "js-cookie";
 
 export default class Example extends React.Component {
   constructor(props) {
     super(props);
 
-    this.toggle = this.toggle.bind(this);
-    this.logout = this.logout.bind(this)
     this.state = {
       isOpen: false
     };
   }
-  toggle() {
+  toggle = () => {
     this.setState({
       isOpen: !this.state.isOpen
     });
-  }
+  };
 
-  logout() {
+  logout = () => {
     Cookies.remove("token");
     window.location.reload();
-  }
+  };
   render() {
     return (
       <div>
@@ -51,11 +49,34 @@ export default class Example extends React.Component {
                 </DropdownToggle>
 
                 <DropdownMenu right style={{ backgroundColor: "#2D2A2A" }}>
-                  <Link to="/login"><DropdownItem style={{ color: "#F48E16" }}>Login</DropdownItem></Link>
-                  <Link to="/register"><DropdownItem style={{ color: "#F48E16" }}>Register</DropdownItem></Link>
-                  <DropdownItem style={{ color: "#F48E16" }}>Search</DropdownItem>
+                  {Cookies.get("token") ? (
+                    <Link to="">
+                      <DropdownItem style={{ color: "#F48E16" }}>
+                        Profile
+                      </DropdownItem>
+                    </Link>
+                  ) : (
+                    <Link to="/login">
+                      <DropdownItem style={{ color: "#F48E16" }}>
+                        Login
+                      </DropdownItem>
+                    </Link>
+                  )}
+                  <Link to="/register">
+                    <DropdownItem style={{ color: "#F48E16" }}>
+                      Register
+                    </DropdownItem>
+                  </Link>
+                  <DropdownItem style={{ color: "#F48E16" }}>
+                    Search
+                  </DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem style={{ color: "#F48E16"  }} onClick= {logout}>Logout</DropdownItem>
+                  <DropdownItem
+                    style={{ color: "#F48E16" }}
+                    onClick={this.logout}
+                  >
+                    Logout
+                  </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>
