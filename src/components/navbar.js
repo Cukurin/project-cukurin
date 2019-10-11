@@ -12,11 +12,14 @@ import {
   DropdownItem
 } from "reactstrap";
 
+import Cookies from 'js-cookie'
+
 export default class Example extends React.Component {
   constructor(props) {
     super(props);
 
     this.toggle = this.toggle.bind(this);
+    this.logout = this.logout.bind(this)
     this.state = {
       isOpen: false
     };
@@ -25,6 +28,11 @@ export default class Example extends React.Component {
     this.setState({
       isOpen: !this.state.isOpen
     });
+  }
+
+  logout() {
+    Cookies.remove("token");
+    window.location.reload();
   }
   render() {
     return (
@@ -46,7 +54,7 @@ export default class Example extends React.Component {
                   <DropdownItem style={{ color: "#F48E16" }}>Register</DropdownItem>
                   <DropdownItem style={{ color: "#F48E16" }}>Search</DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem style={{ color: "#F48E16"  }}>Logout</DropdownItem>
+                  <DropdownItem style={{ color: "#F48E16"  }} onClick= {logout}>Logout</DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
             </Nav>
