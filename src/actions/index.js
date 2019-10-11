@@ -1,6 +1,6 @@
 import Axios from "axios";
 import Cookie from "js-cookie";
-import swal from 'sweetalert';
+import Swal from 'sweetalert';
 
 
 export const RegisterUser = (values, history) => {
@@ -8,13 +8,13 @@ export const RegisterUser = (values, history) => {
   
   Axios.post(`http://localhost:3909/user`, values)
     .then(result => {
-      swal("Good job!", "Pendaftaran Berhasil!", "success");
+      Swal("Good job!", "Pendaftaran Berhasil!", "success");
       history.push("/login");
       console.log(result);
     })
     .catch(error => {
       console.log(error);
-      swal ( "Oops" ,  "Username atau Email Sudah terdaftar" ,  "error" )
+      Swal ( "Oops" ,  "Username atau Email Sudah terdaftar" ,  "error" )
 
     });
 
@@ -27,6 +27,7 @@ export const RegisterUser = (values, history) => {
 export const LoginUser = (values, history) => {
   Axios.post(`http://localhost:3909/user/login`, values)
     .then(result => {
+      console.log(result,'result')
       Cookie.set("token", result.data.token);
       history.push("/");
       window.location.reload();
@@ -39,7 +40,7 @@ export const LoginUser = (values, history) => {
 
     });
   return {
-    type: "loginUser",
+    type: "LoginUser",
     values
   };
 };
