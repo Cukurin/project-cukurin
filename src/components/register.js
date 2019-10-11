@@ -1,8 +1,17 @@
 import React from "react";
+import Background from '../assets/form.jpg'
 import { Link, withRouter } from "react-router-dom";
 import { RegisterUser } from "../actions";
 import { connect } from "react-redux";
+import './css/register.css'
 
+let sectionStyle = {
+  width: '100%',
+  height: '487px',
+  backgroundImage: `url(${Background})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center'
+}
 class Register extends React.Component {
   constructor(props) {
     console.log(props, "props");
@@ -19,7 +28,6 @@ class Register extends React.Component {
   }
 
   handleInputChange = event => {
-    console.log(this.state, 'state')
     this.setState({
       ...this.state,
       [event.target.name]: event.target.value
@@ -33,10 +41,9 @@ class Register extends React.Component {
 
   render() {
     return (
-      <div
-        className="mh-fullscreen bg-img center-vh p-20"
-        style={{ backgroundImage: "url(assets/img/bg-girl.jpg)" }}
-      >
+      <div className="formHolder" style={sectionStyle}>
+      <div className="container">
+        <div className="mh-fullscreen bg-img center-vh p-20">
         <div
           className="card card-shadowed p-50 w-400 mb-0"
           style={{ maxWidth: "100%" }}
@@ -50,6 +57,7 @@ class Register extends React.Component {
                 type="text"
                 name="username"
                 className="form-control"
+                fullwidth
                 required
                 placeholder="Username"
                 onChange={this.handleInputChange}
@@ -102,18 +110,20 @@ class Register extends React.Component {
             </div>
             <br />
             <button
-              className="btn btn-bold btn-block btn-primary"
+              className="btn btn-bold btn-block btn-warning"
               type="submit"
             >
               Register
             </button>
           </form>
           <hr className="w-30" />
-          <p className="text-center text-muted fs-13 mt-20">
+          <p className="text-center fs-13 mt-20">
             Already have an account?
-            <Link to="/login">Sign in</Link>
+            <Link className="link" to="/login"> Sign in </Link>
           </p>
         </div>
+      </div>
+      </div>
       </div>
     );
   }

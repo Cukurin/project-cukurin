@@ -1,16 +1,21 @@
 import Axios from "axios";
 import Cookie from "js-cookie";
+import swal from 'sweetalert';
+
 
 export const RegisterUser = (values, history) => {
   console.log(history,'history');
   
   Axios.post(`http://localhost:3909/user`, values)
     .then(result => {
+      swal("Good job!", "Pendaftaran Berhasil!", "success");
       history.push("/login");
-      // console.log(result);
+      console.log(result);
     })
     .catch(error => {
       console.log(error);
+      swal ( "Oops" ,  "Username atau Email Sudah terdaftar" ,  "error" )
+
     });
 
   return {

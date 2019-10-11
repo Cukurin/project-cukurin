@@ -15,8 +15,6 @@
   position: relative;
   top: 50px;
 }
-.search {
-  width: 700px;
+input#search {
   text-align: center;
-  margin: auto;
 }
