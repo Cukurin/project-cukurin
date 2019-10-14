@@ -6,21 +6,21 @@ import {idBarberShop} from '../store/actions'
 
 class barbershopDetail extends Component {
   componentDidMount() {
-    console.log(this.props);
-    this.props.getBarberShopAction();
+    console.log(this.props, 'props');
+    this.props.getBarberShopAction(this.props.history);
     
   }
   render() {
     const style = {
       width: '100%',
       height: '400px',
-      backgroundImage: `url('${this.props.shop.imageUrl}')`,
+      backgroundImage: `url('${this.props.barbershopData.imageUrl}')`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       border: '1px solid gold'
     }
-    const title = this.props.shop.name;
-    const address = this.props.shop.address
+    const title = this.props.barbershopData.name;
+    const address = this.props.barbershopData.address
 
     return (
       <div>
@@ -74,7 +74,7 @@ class barbershopDetail extends Component {
 const mapStateToProps = state => {
   console.log(state, 'state');
   return {
-    barberShopData: state.getBarberShop.barberShopData
+    barbershopData: state.getBarberShop.barbershopData
   }
 }
 
