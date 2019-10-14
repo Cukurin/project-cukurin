@@ -1,19 +1,32 @@
 import React from "react";
 import { connect } from "react-redux";
 import { idUser } from "../store/actions";
+import { withRouter } from "react-router-dom";
+import "./css/profile.css";
 
 class Profile extends React.Component {
   componentDidMount() {
-    console.log(this.props);
+    console.log(this.props, "props");
 
-    this.props.getUserAction();
+    this.props.getUserAction(this.props.history);
   }
   render() {
     return (
-      <div>
-        <ul>
-          <li>{this.props.userData.username}</li>
-        </ul>
+      <div className="containerBoxProfile">
+        <div className="photoProfile"></div>
+        <div className="BoxProfile">
+          <div className="titleProfile">
+            <h1>Personal Information</h1>
+          </div>
+          <ul>
+            <div className="isiProfile">
+              <li>Username : {this.props.userData.username}</li>
+              <li>Email : {this.props.userData.email}</li>
+              <li>Phone Number : {this.props.userData.phoneNumber}</li>
+            </div>
+          </ul>
+          <button className='buttonHistory'>history</button>
+        </div>  
       </div>
     );
   }
@@ -28,13 +41,15 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getUserAction: () => dispatch(idUser())
+    getUserAction: history => dispatch(idUser(history))
   };
 };
 
-const connectComponent = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Profile);
+const connectComponent = withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Profile)
+);
 
 export default connectComponent;
