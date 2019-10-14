@@ -23,7 +23,7 @@ class barbershopDetail extends Component {
 
     return (
       <div>
-        <div className="container" style={{height: '1385px'}}>
+        <div className="container" style={{height: '1450px'}}>
         <div className="row">
              <div className="col" style={style}>
              </div>
@@ -57,6 +57,9 @@ class barbershopDetail extends Component {
               <li>
                 <Link style={{textDecoration: 'none', color:'gold'}}>Shaving</Link>
               </li>
+            </div>
+            <div className="row" style={{marginLeft: '35px', marginTop: '20px'}}>
+            <button type="button" class="btn btn-warning">Book Now</button>
             </div>
             <div className="row" style={{marginTop: '20px', marginLeft:'10px'}}>
               <h6>Jl.Kemang Raya No.27 D RT 11 RW 5, Bangka, Jakarta Selatan, Jakarta 12730</h6>
