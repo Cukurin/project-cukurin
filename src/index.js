@@ -14,6 +14,7 @@ import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import allReducers from "./store/reducer";
 import thunk from "redux-thunk";
+import barbershopDetail from "./components/barbershopDetail";
 
 
 const Main = withRouter(({ location }) => {
@@ -27,6 +28,7 @@ const Main = withRouter(({ location }) => {
       <Route path="/search" component={Search} />
       <Route path="/profile" component={Profile}/>
       <Route path="/register" component={Register} />
+      <Route path="/barbershop/:id" component={barbershopDetail}/>
       {location.pathname !== "/login" && location.pathname !== "/register" && (
         <Footer />
       )}
