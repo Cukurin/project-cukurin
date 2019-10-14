@@ -4,6 +4,7 @@ import './css/search.css';
 import Shop from './Shop'
 import Marker from './marker'
 
+const API = process.env.REACT_APP_API_HOST
 
 class Search extends Component {
   constructor(props) {
@@ -20,7 +21,7 @@ class Search extends Component {
   //example fetch FAKE API
   componentDidMount() {
     // const url = "https://raw.githubusercontent.com/lewagon/flats-boilerplate/master/flats.json"
-    const url = "http://localhost:3909/barbershop"
+    const url = `${API}/barbershop`
     fetch(url) 
     .then(response => response.json())
     .then((data) => {
@@ -31,10 +32,10 @@ class Search extends Component {
   })
   }
   selectShop = (shop) => {
-    console.log(shop)
     this.setState({
       selectedShop: shop
     })
+    console.log(shop)
   }
   
   handleSearch = (event) => {
