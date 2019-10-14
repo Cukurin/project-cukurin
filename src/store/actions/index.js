@@ -58,7 +58,7 @@ export const idUser = history => {
     let token = Cookie.get("token");
     let decoded = jwt.verify(token, "secretbycukurin", function(err, decoded) {
       if (err) {
-        history.push("/login");
+        history.push("/");
       } else {
         return decoded;
       }
