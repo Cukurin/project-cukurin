@@ -78,7 +78,8 @@ class Search extends Component {
              return <Shop 
              key={shop.name} 
              shop = {shop}
-             selectShop={this.selectShop} />
+             selectShop={this.selectShop} 
+             onClick={this.handleClick}/>
            })}
           </div>
         </div>

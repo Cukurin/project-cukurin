@@ -66,7 +66,6 @@ export const idUser = history => {
 
     console.log(decoded);
     if (token) {
-
     Axios.get(
       `${process.env.REACT_APP_API_HOST}/user/${decoded.data._id}`
       // headers: { token: Cookie.get("token") }
@@ -85,33 +84,16 @@ export const idUser = history => {
   };
 }};
 
-export const idBarberShop = history => {
-  return dispatch => {
-    console.log(history);
-
-    let token = Cookie.get('token');
-    let decoded = jwt.verify(token, 'secretbycukurin', function(err, decoded) {
-      if (err) {
-        history.push('/login');
-      } else {
-        return decoded;
-      }
-    });
-    console.log(decoded);
-    if(token) {
-      Axios.get(
-        `${process.env.REACT_APP_API_HOST}/barbershop/${decoded.data._id}`
-      )
-      .then(result => {
-        console.log(result.data);
-        dispatch({
-          type: 'FETCH_BARBER',
-          payload: result.data
-        });
-      })
-      .catch(error => {
-        console.log(error);
-        
-      })
+export const getBarberShop = (id, history) => async dispatch => {
+  try {
+    let barbershop = await Axios.get(`${API}/barbershop/${id}`);
+    console.log( history, 'action history');
+    
+    if(barbershop.status === 200) {
+      dispatch({type: 'FETCH_BARBER', payload: barbershop.data.result})
+      history.push('/barbershop')
     }
-  }}
+  } catch (error) {
+    console.log(error)
+  }
+}

@@ -2,14 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 import Iframe from 'react-iframe'
-import {idBarberShop} from '../store/actions'
+import {getBarberShop} from '../store/actions'
 import Image from '../assets/bgtop.jpg'
 
 class barbershopDetail extends Component {
   componentDidMount() {
     console.log(this.props, 'props');
-    this.props.getBarberShopAction(this.props.history);
+    this.props.getBarberShop();
     
+  }
+  handleDetail = (id, history) => {
+    this.props.getBarberShop(id, history)
   }
   render() {
     const style = {
@@ -75,13 +78,13 @@ class barbershopDetail extends Component {
 const mapStateToProps = state => {
   console.log(state, 'state');
   return {
-    barbershopData: state.getBarberShop.barbershopData
+    barbershopData: state.barbershopData.barbershopData
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    getBarberShopAction: (history) => dispatch(idBarberShop(history))
+    getBarberShopAction: (history) => dispatch(getBarberShop(history))
   };
 };
 

@@ -9,7 +9,7 @@ const allReducers = combineReducers({
   Register,
   LoginUser,
   GetUserName,
-   GetBarberShop
+  GetBarberShop
 });
 
 export default allReducers

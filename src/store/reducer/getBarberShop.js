@@ -8,7 +8,8 @@ const GetBarberShop = (state = defaultState, action) => {
   switch (action.type) {
     
     case "FETCH_BARBER":
-      return {...state, barbershopData: action.payload};
+      return {...state, 
+        barbershopData: action.payload};
 
     default:
       return state;
