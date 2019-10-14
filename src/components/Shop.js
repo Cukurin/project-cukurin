@@ -10,14 +10,14 @@ class Shop extends React.Component {
     event.preventDefault()
     this.props.selectShop(this.props.shop)
   }
-  btnClick = (event) => {
-    const id = this.props.shop._id
-    const url = axios.get(`${REACT_APP_API_HOST}/barbershop/:${id}`).then((data) => {
-      console.log(data)
-      event.preventDefault()
-    })
-    console.log(url + 'aaa')  ;    
-  }
+  // btnClick = (event) => {
+  //   const id = this.props.shop._id
+  //   const url = axios.get(`${REACT_APP_API_HOST}/barbershop/:${id}`).then((data) => {
+  //     console.log(data)
+  //     event.preventDefault()
+  //   })
+  //   console.log(url + 'aaa')  ;    
+  // }
   render() {
     const title = this.props.shop.name;
     const style = {
@@ -34,7 +34,7 @@ class Shop extends React.Component {
           <span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span> 
         </div>
-        {title} <button onClick={this.btnClick} type="button" class="btn btn-warning">Detail</button> 
+        {title} <button onClick={this.handleClick} type="button" class="btn btn-warning">Detail</button> 
       </div>
       
     );

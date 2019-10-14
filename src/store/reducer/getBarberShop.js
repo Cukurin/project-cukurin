@@ -2,7 +2,7 @@ const defaultState = {
   barbershopData: []
 }
 
-const getBarberShop = (state = defaultState, action) => {
+const GetBarberShop = (state = defaultState, action) => {
   console.log(state);
   
   switch (action.type) {
@@ -15,4 +15,4 @@ const getBarberShop = (state = defaultState, action) => {
   }
 };
 
-export default getBarberShop
+export default GetBarberShop
