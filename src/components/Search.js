@@ -35,7 +35,9 @@ class Search extends Component {
     this.setState({
       selectedShop: shop
     })
-    console.log(shop)
+    console.log(shop, 'dan', this.state.shops)
+    console.log(this.state, "state data");
+
   }
   
   handleSearch = (event) => {
@@ -57,10 +59,12 @@ class Search extends Component {
 
       }
     }
+    console.log(this.state, "state data");
+
     return(
       <div className="app">
         <div className="main">
-          <div className="search">
+    <div className="search">
             <input type="text"
             placeholder="Search..."
             value={this.state.search}
@@ -76,6 +80,7 @@ class Search extends Component {
           </div>
         </div>
         <div className="map" style={{width: '100%'}}>
+          
           <GoogleMapReact
               // bootstrapURLKeys={{ key: process.env.REACT_APP_API_KEY }}
               center={center}

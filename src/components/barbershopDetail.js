@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Image from '../assets/bgtop.jpg';
 import {Link} from 'react-router-dom';
 import Iframe from 'react-iframe'
 import {idBarberShop} from '../store/actions'
@@ -15,11 +14,13 @@ class barbershopDetail extends Component {
     const style = {
       width: '100%',
       height: '400px',
-      backgroundImage: `url('${Image}')`,
+      backgroundImage: `url('${this.props.shop.imageUrl}')`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       border: '1px solid gold'
     }
+    const title = this.props.shop.name;
+    const address = this.props.shop.address
 
     return (
       <div>
@@ -30,7 +31,7 @@ class barbershopDetail extends Component {
           </div>
           <div className="row" style={{marginTop: '25px'}}>
             <section className="barbershop-name"> 
-            <h1> `${this.props.barberShopData.name}`</h1>
+            <h1> {title}</h1>
             </section>    
           </div>
           <div className="row">
@@ -62,7 +63,7 @@ class barbershopDetail extends Component {
             <button type="button" class="btn btn-warning">Book Now</button>
             </div>
             <div className="row" style={{marginTop: '20px', marginLeft:'10px'}}>
-              <h6>Jl.Kemang Raya No.27 D RT 11 RW 5, Bangka, Jakarta Selatan, Jakarta 12730</h6>
+              <h6>{address}</h6>
             </div>
             <Iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0355930263654!2d106.81321122201307!3d-6.2590419890469535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x98abbfacdfba086a!2sTalents%20By%20Herman%20Coa!5e0!3m2!1sid!2sid!4v1571028291842!5m2!1sid!2sid" width="100%" height="500px" frameborder="0" allowfullscreen=""></Iframe>
         </div>
