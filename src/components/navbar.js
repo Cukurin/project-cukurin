@@ -19,7 +19,7 @@ import { connect } from "react-redux";
 
 class NavBar extends React.Component {
   componentDidMount() {
-    console.log(this.props);
+    // console.log(this.props);
     
     this.props.getUserAction(this.props.history);
   }
@@ -98,7 +98,7 @@ class NavBar extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state, "state");
+  // console.log(state, "state");
   return {
     userData: state.GetUserName.userData
   };

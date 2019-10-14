@@ -3,7 +3,7 @@ const defaultState = {
 }
 
 const GetUserName = (state = defaultState, action) => {
-  console.log(state);
+  // console.log(state);
   
   switch (action.type) {
     

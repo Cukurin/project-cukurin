@@ -1,0 +1,44 @@
+.containerBoxProfile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin:70px 0
+}
+
+.photoProfile{
+  content: url(../../assets/default-profile.png);
+  width: 150px;
+  height: 150px;
+  border-radius: 100px
+}
+
+.BoxProfile{
+  background-color: rgb(31, 25, 25);
+  height: 350px
+}
+
+.titleProfile{
+  margin-top: 50px
+}
+
+.isiProfile{
+  list-style-type: none ;
+  display: flex;
+  flex-direction: column;
+  padding-right: 290px;
+}
+
+.isiProfile li{
+  margin: 10px 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.buttonHistory {
+  margin-left: 40px;
+  background-color: rgb(255, 217, 0);
+  transition: 300ms
+}
+
+button:hover{
+  background-color: rgb(235, 211, 142)
+}
