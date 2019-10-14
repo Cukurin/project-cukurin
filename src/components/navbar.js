@@ -14,7 +14,7 @@ import {
 import { Link, withRouter } from "react-router-dom";
 
 import Cookies from "js-cookie";
-import { idUser } from "../actions";
+import { idUser } from "../store/actions";
 import { connect } from "react-redux";
 
 class NavBar extends React.Component {

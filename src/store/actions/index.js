@@ -68,7 +68,7 @@ export const idUser = history => {
     if (token) {
 
     Axios.get(
-      `${process.env.REACT_APP_API}/user/${decoded.data._id}`
+      `${process.env.REACT_APP_API_HOST}/user/${decoded.data._id}`
       // headers: { token: Cookie.get("token") }
     )
       .then(result => {

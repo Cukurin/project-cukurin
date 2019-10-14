@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { idUser } from "../actions";
+import { idUser } from "../store/actions";
 
 class Profile extends React.Component {
   componentDidMount() {
