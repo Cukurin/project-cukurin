@@ -11,7 +11,7 @@ import Footer from "./components/footer";
 import * as serviceWorker from "./serviceWorker";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
-import allReducers from "./reducer";
+import allReducers from "./store/reducer";
 import thunk from "redux-thunk";
 
 const Main = withRouter(({ location }) => {

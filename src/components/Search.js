@@ -76,6 +76,7 @@ class Search extends Component {
         </div>
         <div className="map" style={{width: '100%'}}>
           <GoogleMapReact
+              // bootstrapURLKeys={{ key: process.env.REACT_APP_API_KEY }}
               center={center}
               zoom={12}
               

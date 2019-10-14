@@ -1,7 +1,7 @@
 import React from "react";
 import Background from '../assets/form.jpg'
 import { Link, withRouter } from "react-router-dom";
-import { RegisterUser } from "../actions";
+import { RegisterUser } from "../store/actions";
 import { connect } from "react-redux";
 import './css/register.css'
 

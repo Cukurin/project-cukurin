@@ -2,7 +2,7 @@ import React from "react";
 import Background from '../assets/form.jpg'
 import { Link } from "react-router-dom";
 import { connect } from "react-redux"
-import { LoginUser } from "../actions";
+import { LoginUser } from "../store/actions";
 
 let sectionStyle = {
   width: '100%',

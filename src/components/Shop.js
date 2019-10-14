@@ -11,7 +11,7 @@ class Shop extends React.Component {
     this.props.selectShop(this.props.shop)
   }
   btnClick = (event) => {
-    const {id} = this.props.barbershop._id
+    const id = this.props.shop._id
     event.preventDefault()
     axios.get(`${API}/barbershop/:${id}`).then((data) => {
       console.log(data)
