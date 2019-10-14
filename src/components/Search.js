@@ -78,9 +78,7 @@ class Search extends Component {
           <GoogleMapReact
               center={center}
               zoom={12}
-              bootstrapURLKeys={{ key: process.env.REACT_APP_API_KEY }}
-              yesIWantToUseGoogleMapApiInternals
-
+              
               
               >
                 {this.state.shops.map((shop) => {

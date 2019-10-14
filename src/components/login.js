@@ -32,6 +32,8 @@ class Login extends React.Component {
     event.preventDefault()
     this.props.dispatch(LoginUser(this.state, this.props.history))
     console.log(this.state)
+    console.log(this.props);
+    
   }
 
 

@@ -7,8 +7,9 @@ import Header from './components/Header'
 // import NavTabs from './components/navbar'
 // import Search from './components/Search';
 // import Popular from './components/popular'
-import Register from './components/register'
-
+// import Register from './components/register'
+// import barbershopDetail from './components/barbershopDetail'
+import Search from './components/Search'
 
 function App() {
   return (
@@ -17,7 +18,9 @@ function App() {
       <Header/>
       <Popular />
       <ServiceHome/>
-      <Register/>
+      <Search/>
+      {/* <Register/> */}
+      {/* <barbershopDetail/> */}
     </div>
   
   );
