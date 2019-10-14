@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import Image from '../assets/bgtop.jpg';
 import {Link} from 'react-router-dom';
 import Iframe from 'react-iframe'
-
-function mapStateToProps(state) {
-  return {
-
-  };
-}
+import {idBarberShop} from '../store/actions'
 
 class barbershopDetail extends Component {
+  componentDidMount() {
+    console.log(this.props);
+    this.props.getBarberShopAction();
+    
+  }
   render() {
     const style = {
       width: '100%',
@@ -30,7 +30,7 @@ class barbershopDetail extends Component {
           </div>
           <div className="row" style={{marginTop: '25px'}}>
             <section className="barbershop-name"> 
-            <h1> Auzan BarberShop</h1>
+            <h1> `${this.props.barberShopData.name}`</h1>
             </section>    
           </div>
           <div className="row">
@@ -70,7 +70,22 @@ class barbershopDetail extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+  console.log(state, 'state');
+  return {
+    barberShopData: state.getBarberShop.barberShopData
+  }
+}
 
-export default connect(
+const mapDispatchToProps = dispatch => {
+  return {
+    getBarberShopAction: () => dispatch(idBarberShop())
+  };
+};
+
+const connectComponent = connect(
   mapStateToProps,
-)(barbershopDetail);
+  mapDispatchToProps
+)(barbershopDetail)
+
+export default (connectComponent);

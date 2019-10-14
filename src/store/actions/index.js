@@ -84,3 +84,34 @@ export const idUser = history => {
       });
   };
 }};
+
+export const idBarberShop = history => {
+  return dispatch => {
+    console.log(history);
+
+    let token = Cookie.get('token');
+    let decoded = jwt.verify(token, 'secretbycukurin', function(err, decoded) {
+      if (err) {
+        history.push('/login');
+      } else {
+        return decoded;
+      }
+    });
+    console.log(decoded);
+    if(token) {
+      Axios.get(
+        `${API}/barbershop/${decoded.data._id}`
+      )
+      .then(result => {
+        console.log(result, 'RESULT');
+        dispatch({
+          type: 'FETCH_BARBER',
+          payload: result.data
+        });
+      })
+      .catch(error => {
+        console.log(error);
+        
+      })
+    }
+  }}

@@ -2,7 +2,7 @@ import React from 'react'
 import "./css/shop.css";
 import axios from 'axios';
 
-const API = process.env.REACT_APP_API_HOST
+const REACT_APP_API_HOST = process.env.REACT_APP_API_HOST
 
 class Shop extends React.Component {
   handleClick = (event) => {
@@ -12,11 +12,11 @@ class Shop extends React.Component {
   }
   btnClick = (event) => {
     const id = this.props.shop._id
-    event.preventDefault()
-    axios.get(`${API}/barbershop/:${id}`).then((data) => {
+    const url = axios.get(`${REACT_APP_API_HOST}/barbershop/:${id}`).then((data) => {
       console.log(data)
-
+      event.preventDefault()
     })
+    console.log(url + 'aaa')  ;    
   }
   render() {
     const title = this.props.shop.name;
