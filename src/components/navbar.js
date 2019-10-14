@@ -11,11 +11,19 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 import Cookies from "js-cookie";
+import { idUser } from "../actions";
+import { connect } from "react-redux";
 
-export default class Example extends React.Component {
+class NavBar extends React.Component {
+  componentDidMount() {
+    console.log(this.props);
+    
+    this.props.getUserAction(this.props.history);
+  }
+
   constructor(props) {
     super(props);
 
@@ -50,7 +58,7 @@ export default class Example extends React.Component {
 
                 <DropdownMenu right style={{ backgroundColor: "#2D2A2A" }}>
                   {Cookies.get("token") ? (
-                    <Link to="">
+                    <Link to="/profile">
                       <DropdownItem style={{ color: "#F48E16" }}>
                         Profile
                       </DropdownItem>
@@ -88,3 +96,20 @@ export default class Example extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  console.log(state, "state");
+  return {
+    userData: state.GetUserName.userData
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getUserAction: (history) => dispatch(idUser(history))
+  };
+};
+
+const connectComponent = withRouter(connect(mapStateToProps,mapDispatchToProps)(NavBar));
+
+export default connectComponent;
