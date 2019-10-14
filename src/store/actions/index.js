@@ -103,7 +103,7 @@ export const idBarberShop = history => {
         `${process.env.REACT_APP_API_HOST}/barbershop/${decoded.data._id}`
       )
       .then(result => {
-        console.log(result, 'RESULT');
+        console.log(result.data);
         dispatch({
           type: 'FETCH_BARBER',
           payload: result.data

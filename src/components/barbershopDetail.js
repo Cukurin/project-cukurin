@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {Link} from 'react-router-dom';
 import Iframe from 'react-iframe'
 import {idBarberShop} from '../store/actions'
+import Image from '../assets/bgtop.jpg'
 
 class barbershopDetail extends Component {
   componentDidMount() {
@@ -14,7 +15,7 @@ class barbershopDetail extends Component {
     const style = {
       width: '100%',
       height: '400px',
-      backgroundImage: `url('${this.props.barbershopData.imageUrl}')`,
+      backgroundImage: `url('${Image}')`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       border: '1px solid gold'
@@ -45,7 +46,7 @@ class barbershopDetail extends Component {
             </div>
             <div className="row">
               <section className="barbershop-detail" style={{marginTop: '20px', marginLeft:'25px'}}>
-                <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque harum dignissimos architecto iusto! Repudiandae nemo corrupti tempore. Beatae, vero? Alias eveniet ducimus laboriosam sapiente excepturi dolorum sint sunt rerum, necessitatibus tenetur delectus, enim quia eaque voluptatibus dolor nam officiis dolore.</h5>
+                <h5>{address}</h5>
               </section>
             </div>
             <div className="row" style={{marginTop: '20px', marginLeft:'10px'}}>
@@ -80,7 +81,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getBarberShopAction: () => dispatch(idBarberShop())
+    getBarberShopAction: (history) => dispatch(idBarberShop(history))
   };
 };
 
@@ -89,4 +90,4 @@ const connectComponent = connect(
   mapDispatchToProps
 )(barbershopDetail)
 
-export default (connectComponent);
+export default connectComponent;
