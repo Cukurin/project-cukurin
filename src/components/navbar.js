@@ -20,7 +20,7 @@ import { connect } from "react-redux";
 class NavBar extends React.Component {
   componentDidMount() {
     // console.log(this.props,'profile');
-    
+
     this.props.getUserAction(this.props.history);
   }
 
@@ -52,12 +52,16 @@ class NavBar extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <UncontrolledDropdown nav inNavbar>
-                {Cookies.get('token') ? (
-                <DropdownToggle nav caret style={{ color: "#F48E16" }}><span>welcome, </span>
-                  {this.props.userData.username}
-                </DropdownToggle>):(<DropdownToggle nav caret style={{ color: "#F48E16" }}>
-                  Account
-                </DropdownToggle>)}
+                {Cookies.get("token") ? (
+                  <DropdownToggle nav caret style={{ color: "#F48E16" }}>
+                    <span>welcome, </span>
+                    {this.props.userData.username}
+                  </DropdownToggle>
+                ) : (
+                  <DropdownToggle nav caret style={{ color: "#F48E16" }}>
+                    Account
+                  </DropdownToggle>
+                )}
 
                 <DropdownMenu right style={{ backgroundColor: "#2D2A2A" }}>
                   {Cookies.get("token") ? (
@@ -79,9 +83,9 @@ class NavBar extends React.Component {
                     </DropdownItem>
                   </Link>
                   <Link to="/search">
-                  <DropdownItem style={{ color: "#F48E16" }}>
-                    Search
-                  </DropdownItem>
+                    <DropdownItem style={{ color: "#F48E16" }}>
+                      Search
+                    </DropdownItem>
                   </Link>
                   <DropdownItem divider />
                   <DropdownItem
@@ -95,6 +99,7 @@ class NavBar extends React.Component {
             </Nav>
           </Collapse>
         </Navbar>
+        {this.props.error === "TokenExpiredError" && this.logout()}
       </div>
     );
   }
@@ -103,16 +108,22 @@ class NavBar extends React.Component {
 const mapStateToProps = state => {
   console.log(state, "state");
   return {
-    userData: state.GetUserName.userData
+    userData: state.GetUserName.userData,
+    error: state.GetUserName.error
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    getUserAction: (history) => dispatch(idUser(history))
+    getUserAction: history => dispatch(idUser(history))
   };
 };
 
-const connectComponent = withRouter(connect(mapStateToProps,mapDispatchToProps)(NavBar));
+const connectComponent = withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(NavBar)
+);
 
 export default connectComponent;

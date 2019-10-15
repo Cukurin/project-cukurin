@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { idUser } from "../store/actions";
 import { withRouter } from "react-router-dom";
 import "./css/profile.css";
+import { Zoom } from "react-reveal";
 
 class Profile extends React.Component {
   componentDidMount() {
@@ -13,20 +14,22 @@ class Profile extends React.Component {
   render() {
     return (
       <div className="containerBoxProfile">
-        <div className="photoProfile"></div>
-        <div className="BoxProfile">
-          <div className="titleProfile">
-            <h1>Personal Information</h1>
-          </div>
-          <ul>
-            <div className="isiProfile">
-              <li>Username : {this.props.userData.username}</li>
-              <li>Email : {this.props.userData.email}</li>
-              <li>Phone Number : {this.props.userData.phoneNumber}</li>
+        <Zoom>
+          <div className="photoProfile"></div>
+          <div className="BoxProfile">
+            <div className="titleProfile">
+              <h1>Personal Information</h1>
             </div>
-          </ul>
-          <button className='buttonHistory'>history</button>
-        </div>  
+            <ul>
+              <div className="isiProfile">
+                <li>Username : {this.props.userData.username}</li>
+                <li>Email : {this.props.userData.email}</li>
+                <li>Phone Number : {this.props.userData.phoneNumber}</li>
+              </div>
+            </ul>
+            <button className="buttonHistory">history</button>
+          </div>
+        </Zoom>
       </div>
     );
   }

@@ -11,3 +11,8 @@ p.card-text {
 .card:hover {
   background-color: darkslategrey;
 }
+
+.card-title-2{
+  margin-top:64px
+}
+

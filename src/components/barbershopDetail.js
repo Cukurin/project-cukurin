@@ -13,8 +13,8 @@ class barbershopDetail extends Component {
   
   render() {
     console.log(this.props.barbershop, "props");
-    const { barbershop:{address,name, imageUrl,}}=this.props.barbershop
-
+    const { barbershop:{address, name, imageUrl , services}}=this.props.barbershop
+    
     
     
     const style = {
@@ -54,16 +54,16 @@ class barbershopDetail extends Component {
               </section>
             </div>
             <div className="row" style={{marginTop: '20px', marginLeft:'10px'}}>
-              <h5>Service :</h5>
+                <h5> Services :</h5>
             </div>
-            <div className="col" style={{marginLeft: '30px'}}>
-              <li>
-                <Link style={{textDecoration: 'none', color:'gold'}}>Normal</Link>
-              </li>
-              <li>
-                <Link style={{textDecoration: 'none', color:'gold'}}>Shaving</Link>
-              </li>
-            </div>
+              <div>
+                {Array.isArray(services) && services.map(service=>{
+                  return <li>{service}</li>
+                  
+                })}
+             
+           </div>
+            
             <div className="row" style={{marginLeft: '35px', marginTop: '20px'}}>
             <button type="button" class="btn btn-warning">Book Now</button>
             </div>
