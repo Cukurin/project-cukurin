@@ -28,7 +28,7 @@ const Main = withRouter(({ location }) => {
       <Route path="/search" component={Search} />
       <Route path="/profile" component={Profile}/>
       <Route path="/register" component={Register} />
-      <Route path="/barbershop" component={barbershopDetail}/>
+      <Route path="/barbershop/:id" component={barbershopDetail}/>
       {location.pathname !== "/login" && location.pathname !== "/register" && (
         <Footer />
       )}
