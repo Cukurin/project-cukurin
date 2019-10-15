@@ -1,8 +1,6 @@
 import React from 'react'
 import "./css/shop.css";
-import axios from 'axios';
 
-const REACT_APP_API_HOST = process.env.REACT_APP_API_HOST
 
 class Shop extends React.Component {
   handleClick = (event) => {

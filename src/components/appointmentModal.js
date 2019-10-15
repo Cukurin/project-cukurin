@@ -22,16 +22,6 @@ class AppointmentModal extends React.Component {
   render() {
     return (
       <div className="container">
-        <h2>Modal Example</h2>
-        {/* Trigger the modal with a button */}
-        <button
-          type="button"
-          className="btn btn-info btn-lg"
-          data-toggle="modal"
-          data-target="#myModal"
-        >
-          Open Modal
-        </button>
 
         <div class="modal" id="myModal" tabindex="-1" role="dialog">
           <div class="modal-dialog" role="document">
