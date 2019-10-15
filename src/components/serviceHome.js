@@ -35,7 +35,7 @@ class Service extends Component {
               className="card wow fadeIn"
               data-wow-duration="1.5s"
               data-wow-delay="0.8s"
-              style={{ margin: "90px 0 70px 0" }}
+              style={{ margin: "100px 0 70px 0" }}
             >
               <img src={logo2} className="card-img-top" alt="..." />
               <div className="card-body-2">
