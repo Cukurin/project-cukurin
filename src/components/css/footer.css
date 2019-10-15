@@ -12,6 +12,7 @@
 .isiContainerTechnology{
   display: flex;
   flex-direction: column;
+  color: blanchedalmond
 }
 
 .isiContainerTechnology1{
@@ -29,7 +30,7 @@
   display:flex;
   justify-content: center;
   padding-right: 30px;
-  margin:20px 0px;
+  margin-bottom: 20px;
   font-size: 30px
 }
 

@@ -1,5 +1,6 @@
 const defaultState = {
-  userData: []
+  userData: [],
+  error: null
 }
 
 const GetUserName = (state = defaultState, action) => {
@@ -9,7 +10,9 @@ const GetUserName = (state = defaultState, action) => {
     
     case "GET_USER":
       return {...state, userData: action.payload};
-
+      case "HANDLE_ERROR":
+        return {...state, error: action.error};
+  
     default:
       return state;
   }
