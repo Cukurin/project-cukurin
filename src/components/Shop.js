@@ -10,6 +10,11 @@ class Shop extends Component {
     // call the parent method selectShop
     event.preventDefault()
     this.props.selectShop(this.props.shop)
+    // const {_id} = this.props.shop
+    // this.props.history.push(`/barbershop/${_id}`)
+  }
+  handleMove = (event) => {
+    event.preventDefault()
     const {_id} = this.props.shop
     this.props.history.push(`/barbershop/${_id}`)
   }
@@ -31,7 +36,7 @@ class Shop extends Component {
           <span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span> 
         </div>
-        {title} <button onClick="" type="button" class="btn btn-warning">Detail</button> 
+        {title} <button onClick={this.handleMove} type="button" class="btn btn-warning">Detail</button> 
       </div>
       
     );
