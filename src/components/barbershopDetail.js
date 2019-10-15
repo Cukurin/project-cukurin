@@ -6,26 +6,27 @@ import {getBarberShop} from '../store/actions'
 import Image from '../assets/bgtop.jpg'
 
 class barbershopDetail extends Component {
+
   componentDidMount() {
-    console.log(this.props, 'props');
-    this.props.getBarberShop();
-    
+    this.props.getBarberShop(this.props.match.params.id)
   }
-  handleDetail = (id, history) => {
-    this.props.getBarberShop(id, history)
-  }
+  
   render() {
+    console.log(this.props.barbershop, "props");
+    const { barbershop:{address, name, imageUrl , services}}=this.props.barbershop
+    
+    
+    
     const style = {
       width: '100%',
       height: '400px',
-      backgroundImage: `url('${Image}')`,
+      backgroundImage: `url('${imageUrl}')`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       border: '1px solid gold'
     }
-    const title = this.props.barbershopData.name;
-    const address = this.props.barbershopData.address
-
+ 
+    
     return (
       <div>
         <div className="container" style={{height: '1450px'}}>
@@ -35,7 +36,7 @@ class barbershopDetail extends Component {
           </div>
           <div className="row" style={{marginTop: '25px'}}>
             <section className="barbershop-name"> 
-            <h1> {title}</h1>
+            <h1> {name}</h1>
             </section>    
           </div>
           <div className="row">
@@ -49,20 +50,20 @@ class barbershopDetail extends Component {
             </div>
             <div className="row">
               <section className="barbershop-detail" style={{marginTop: '20px', marginLeft:'25px'}}>
-                <h5>{address}</h5>
+                <h5>Deskripsi</h5>
               </section>
             </div>
             <div className="row" style={{marginTop: '20px', marginLeft:'10px'}}>
-              <h5>Service :</h5>
+                <h5> Services :</h5>
             </div>
-            <div className="col" style={{marginLeft: '30px'}}>
-              <li>
-                <Link style={{textDecoration: 'none', color:'gold'}}>Normal</Link>
-              </li>
-              <li>
-                <Link style={{textDecoration: 'none', color:'gold'}}>Shaving</Link>
-              </li>
-            </div>
+              <div>
+                {Array.isArray(services) && services.map(service=>{
+                  return <li>{service}</li>
+                  
+                })}
+             
+           </div>
+            
             <div className="row" style={{marginLeft: '35px', marginTop: '20px'}}>
             <button type="button" class="btn btn-warning">Book Now</button>
             </div>
@@ -73,24 +74,19 @@ class barbershopDetail extends Component {
         </div>
       </div>
     );
-  }
-}
+  
+    }}
 const mapStateToProps = state => {
-  console.log(state, 'state');
   return {
-    barbershopData: state.barbershopData.barbershopData
+    barbershop: state.barbershop
   }
 }
-
 const mapDispatchToProps = dispatch => {
   return {
-    getBarberShopAction: (history) => dispatch(getBarberShop(history))
-  };
-};
+    getBarberShop: (id) => dispatch(getBarberShop(id))
+  }
+}
 
-const connectComponent = connect(
-  mapStateToProps,
-  mapDispatchToProps
+export default connect(
+  mapStateToProps, mapDispatchToProps
 )(barbershopDetail)
-
-export default connectComponent;

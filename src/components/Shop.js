@@ -12,14 +12,6 @@ class Shop extends React.Component {
     console.log(this.props.shop._id);
     
   }
-  // btnClick = (event) => {
-  //   const id = this.props.shops._id
-  //   const url = axios.get(`${REACT_APP_API_HOST}/barbershop/:${id}`).then((data) => {
-  //     console.log(data)
-  //     event.preventDefault()
-  //   })
-  //   console.log(url + 'aaa')  ;    
-  // }
   render() {
     const title = this.props.shop.name;
     const style = {

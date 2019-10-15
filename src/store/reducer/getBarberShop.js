@@ -1,19 +1,19 @@
 const defaultState = {
-  barbershopData: []
+  barbershop: []
 }
 
-const GetBarberShop = (state = defaultState, action) => {
+const getBarberShop = (state = defaultState, action) => {
   console.log(state);
   
   switch (action.type) {
     
-    case "FETCH_BARBER":
+    case "GET_BARBERSHOP":
       return {...state, 
-        barbershopData: action.payload};
+        barbershop: action.payload};
 
     default:
       return state;
   }
 };
 
-export default GetBarberShop
+export default getBarberShop

@@ -1,4 +1,5 @@
-import Axios from "axios";
+import axios from "axios";
+import Axios from 'axios';
 import Cookie from "js-cookie";
 import Swal from "sweetalert";
 import jwt from "jsonwebtoken";
@@ -14,8 +15,8 @@ const handleError = error => {
 
 export const RegisterUser = (values, history) => {
   // console.log(history,'history');
-
-  Axios.post(`${API}/user`, values)
+  
+  axios.post(`${API}/user`, values)
     .then(result => {
       Swal("Good job!", "Pendaftaran Berhasil!", "success");
       history.push("/login");
@@ -33,7 +34,7 @@ export const RegisterUser = (values, history) => {
 };
 
 export const LoginUser = (values, history) => {
-  Axios.post(`${API}/user/login`, values)
+  axios.post(`${API}/user/login`, values)
     .then(result => {
       // console.log(result.data, "result");
       Cookie.set("token", result.data.token);
@@ -93,14 +94,14 @@ export const idUser = history => {
 
 export const getBarberShop = (id, history) => async dispatch => {
   try {
-    let barbershop = await Axios.get(`${API}/barbershop/${id}`);
-    console.log(history, "action history");
-
-    if (barbershop.status === 200) {
-      dispatch({ type: "FETCH_BARBER", payload: barbershop.data.result });
-      history.push("/barbershop");
+    let barbershop = await axios.get(`${API}/barbershop/${id}`)
+      
+      if(barbershop !== undefined && barbershop.status === 200) {
+      dispatch({type: 'GET_BARBERSHOP', payload: barbershop.data})
+      history.push('/barbershop')
+      
     }
-  } catch (error) {
-    console.log(error);
+  }catch (error) {
+    console.log(error)
   }
 };
