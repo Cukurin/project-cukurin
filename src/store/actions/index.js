@@ -68,7 +68,7 @@ export const idUser = history => {
       }
     });
 
-    console.log("ini decoded", decoded);
+    console.log("ini dec  oded", decoded);
     if (token  && decoded !== undefined) {
       Axios.get(
         `${process.env.REACT_APP_API_HOST}/user/${decoded.data._id}`
