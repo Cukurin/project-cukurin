@@ -1,15 +1,20 @@
-import React from 'react'
+import React, {Component} from 'react'
 import "./css/shop.css";
+import {getBarberShop} from '../store/actions'
+import { connect } from 'react-redux';
+import {withRouter} from 'react-router-dom'
 
 
-class Shop extends React.Component {
+class Shop extends Component {
   handleClick = (event) => {
     // call the parent method selectShop
     event.preventDefault()
     this.props.selectShop(this.props.shop)
-    console.log(this.props.shop._id);
-    
+    const {_id} = this.props.shop
+    this.props.history.push(`/barbershop/${_id}`)
   }
+  //create history - dengan withRouter
+
   render() {
     const title = this.props.shop.name;
     const style = {
@@ -26,10 +31,12 @@ class Shop extends React.Component {
           <span className="fa fa-star checked"></span>
           <span className="fa fa-star checked"></span> 
         </div>
-        {title} <button onClick={this.handleClick} type="button" class="btn btn-warning">Detail</button> 
+        {title} <button onClick="" type="button" class="btn btn-warning">Detail</button> 
       </div>
       
     );
   }
 }
-export default Shop;
+
+
+export default withRouter(connect()(Shop))

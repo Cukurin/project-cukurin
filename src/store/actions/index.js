@@ -98,7 +98,7 @@ export const getBarberShop = (id, history) => async dispatch => {
       
       if(barbershop !== undefined && barbershop.status === 200) {
       dispatch({type: 'GET_BARBERSHOP', payload: barbershop.data})
-      history.push('/barbershop')
+      history.push(`/barbershop/${id}`)
       
     }
   }catch (error) {

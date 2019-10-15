@@ -36,10 +36,8 @@ class Search extends Component {
       selectedShop: shop,
       id : this.state.shops[0]._id
     })
-    console.log(shop,'dan', this.state.shops[0]._id)
     
     
-    console.log(this.state, "state data");
     
   }
   
@@ -62,7 +60,6 @@ class Search extends Component {
 
       }
     }
-    console.log(this.state, "state data");
 
     return(
       <div className="app">

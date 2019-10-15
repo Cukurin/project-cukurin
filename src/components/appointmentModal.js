@@ -1,6 +1,6 @@
 import React from "react";
 import DatePicker from "react-datepicker";
-
+import Swal from 'sweetalert';
 import "react-datepicker/dist/react-datepicker.css";
 
 class AppointmentModal extends React.Component {
@@ -17,6 +17,8 @@ class AppointmentModal extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
     console.log(this.state);
+    Swal("Good job!", "Booking Berhasil!", "success");
+
   };
 
   render() {
