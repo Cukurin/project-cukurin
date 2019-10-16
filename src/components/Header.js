@@ -5,11 +5,10 @@ import { Flip } from "react-reveal";
 
 let sectionStyle = {
   width: "100%",
-  height: "100vh",
+  height: "94vh",
   backgroundImage: `url(${Background})`,
   backgroundSize: "cover",
-  backgroundPosition: "center",
-  
+  backgroundPosition: "center"
 };
 class Header extends Component {
   render() {
@@ -20,19 +19,17 @@ class Header extends Component {
             <Flip top cascade>
               <div className="heroimage">
                 <h1>Changing the World with our Search Engine</h1>
-                <form>
-                  <div className="form-group center">
-                    <label htmlFor="search"></label>
-                    <div className="container">
-                     <button className="btn btn-warning lg">
-                     <h6><i className="fa fa-cut"> </i> Take me there</h6>
-                     </button>
-                    </div>
-                    <small id="search" className="form-text text-muted">
-                      Search your best Barbershop
-                    </small>
+                <small id="search">
+                  Search your best Barbershop
+                </small>
+                <div className="form-group center">
+                  <label htmlFor="search"></label>
+                  <div className="container-btn">
+                    <button className="btnSearch">
+                        <i> </i> Take me there
+                    </button>
                   </div>
-                </form>
+                </div>
               </div>
             </Flip>
           </div>

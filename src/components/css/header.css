@@ -1,20 +1,63 @@
+@-webkit-keyframes anim-glow {
+  0% {
+    box-shadow: 0 0 gold;
+  }
+  100% {
+    box-shadow: 0 0 10px 8px transparent;
+    border-width: 2px;
+  }
+}
+
 .heroimage {
-  font-size: 36px;
+  font-size: 32px;
   /* background-color: rgba(9, 9, 9, 0.5); */
-  height: 300px;
+  height: 200px;
   color: white;
-  text-align: center;
+  text-align: left;
   position: relative;
-  top: 350px;
+  top: 170px;
+  left: 40px;
 }
 
 .heroimage h1 {
-  font-size: 36px;
+  font-size: 28px;
   color: white;
-  text-align: center;
+  text-align: left;
   position: relative;
-  top: 50px;
+  top: 18px;
+  right: 20px;
 }
-input#search {
-  text-align: center;
+.container-btn {
+  position: relative;
+  text-align: left;
+  bottom: 55px;
+}
+
+@keyframes anim-glow {
+  0% {
+    box-shadow: 0 0 gold;
+  }
+  100% {
+    box-shadow: 0 0 10px 8px transparent;
+    border-width: 2px;
+  }
+}
+
+.btnSearch {
+  border: 2px solid gold;
+  background-color: gold;
+  border-radius: 10px;
+  width: 130px;
+  height: 30px;
+  font-size: 14px;
+  -webkit-animation: anim-glow 2s ease infinite;
+  animation: anim-glow 2s ease infinite;
+}
+
+.icon i {
+  border: 2px solid gold;
+  width: 2px;
+  height: 2px;
+  display: inline-block;
+  vertical-align: 6px;
 }

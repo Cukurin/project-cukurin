@@ -28,5 +28,9 @@ h2 {
 }
 
 h1.title-popular {
-  margin-bottom: 50px
+  margin: 30px 0 20px 20px
+}
+
+.containerCardPopular{
+  margin: 0px 10px 55px 10px;
 }
