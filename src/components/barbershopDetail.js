@@ -10,7 +10,7 @@ class barbershopDetail extends Component {
   }
   
   render() {
-    console.log(this.props.barbershop, "props");
+    console.log(this.props, "props");
     const { barbershop:{address, name, imageUrl , services, phoneNumber}}=this.props.barbershop
     
     
@@ -82,12 +82,15 @@ class barbershopDetail extends Component {
       </div>
     );
   
-    }}  
+  }
+}
+
 const mapStateToProps = state => {
   return {
     barbershop: state.barbershop
   }
 }
+
 const mapDispatchToProps = dispatch => {
   return {
     getBarberShop: (id) => dispatch(getBarberShop(id))

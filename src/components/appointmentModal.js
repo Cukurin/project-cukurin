@@ -1,39 +1,53 @@
 import React from "react";
 import DatePicker from "react-datepicker";
-import Swal from 'sweetalert';
+import Swal from "sweetalert";
+import { connect } from "react-redux";
+import { AddAppointment } from "../store/actions";
 import "react-datepicker/dist/react-datepicker.css";
-import './css/bookingModal.css'
 
 class AppointmentModal extends React.Component {
-  state = {
-    startDate: new Date()
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      date: new Date(),
+      service: "",
+      user: "",
+      barbershop: "",
+      isDone: false
+    };
+  }
 
   handleChange = date => {
     this.setState({
-      startDate: date
+      date
     });
   };
+
   handleForm = event => {
     this.setState({
       ...this.state,
-      [event.target.name] : event.target.value
-    })
-    console.log(this.state);
-  }
-  
+      [event.target.name]: event.target.value
+    });
+  };
 
   handleSubmit = event => {
+    console.log(this.props.userData, "wkwkwkwk");
     event.preventDefault();
-    console.log(this.state);
-    Swal("Good job!", "Booking Berhasil!", "success");
+    console.log(this.props, "porps");
 
+    const values = {
+      ...this.state,
+      user: this.props.user._id,
+      barbershop: this.props.barbershop._id
+    };
+
+    this.props.dispatch(AddAppointment(values, this.props.history));
   };
 
   render() {
+
     return (
       <div className="container">
-
         <div class="modal" id="myModal" tabindex="-1" role="dialog">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -49,29 +63,59 @@ class AppointmentModal extends React.Component {
                 </button>
               </div>
               <div class="modal-body">
+<<<<<<< HEAD
+                {/* <form onChange={this.handleForm}>
+=======
                 <form onChange={this.handleForm}>
-                  
-                  <input type="text"
-                   name="Name"
-                  placeholder="Your Name"
-                  value={this.state.name}
-                  
-                  /> 
-                  <br/><br/>
-                  <input type="text"
-                  name="Phone"
-                  value={this.state.phone} 
-                  placeholder="Your Phone Number"
-                 />
+>>>>>>> ac89e44608d700cf14d7381f5c1245d06022b124
+                  <input
+                    type="text"
+                    name="Name"
+                    placeholder="Your Name"
+                    value={this.state.name}
+                  />
+                  <br />
+                  <br />
+                  <input
+                    type="text"
+                    name="Phone"
+                    value={this.state.phone}
+                    placeholder="Your Phone Number"
+                  />
 
-                </form>
-                <p>Pick a date</p>
+                </form> */}
+
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">
+                      Service
+                    </label>
+                  </div>
+                  <select
+                    name="service"
+                    selected={this.state.service}
+                    onChange={this.handleForm}
+                    class="custom-select"
+                    id="inputGroupSelect01"
+                  >
+                    {Array.isArray(this.props.barbershop.services) &&
+                      this.props.barbershop.services.map(service => {
+                        return <option value={service}>{service}</option>;
+                      })}
+                  </select>
+                </div>
+
+                <p>Picka a date</p>
                 <DatePicker
-                  selected={this.state.startDate}
+                  name="date"
+                  selected={this.state.date}
                   onChange={this.handleChange}
-                  showTimeSelect
-                  timeFormat="HH:mm"
-                  dateFormat="yyyy-M-dd > h:mm aa"
+                  dateFormat="yyyy-M-dd"
+                  // showTimeSelect
+                  // timeFormat="HH:mm"
+                  // dateFormat="yyyy-M-dd > h:mm aa"
+                  // value={this.state.date}
+                  // customInput={<PickerCustom />}
                 />
               </div>
 
@@ -100,4 +144,20 @@ class AppointmentModal extends React.Component {
   }
 }
 
-export default AppointmentModal;
+const mapStateToProps = state => {
+  return {
+    barbershop: state.barbershop.barbershop,
+    user: state.GetUserName.userData
+  };
+};
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+// getBarberShop: (id) => dispatch(getBarberShop(id))
+//   }
+// }
+
+export default connect(
+  // mapDispatchToProps,
+  mapStateToProps
+)(AppointmentModal);

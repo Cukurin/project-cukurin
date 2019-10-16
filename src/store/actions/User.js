@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import axios from "axios";
 import Axios from 'axios';
 import Cookie from "js-cookie";
@@ -96,7 +95,7 @@ export const idUser = history => {
 
 export const getBarberShop = (id, history) => async dispatch => {
   try {
-    let barbershop = await axios.get(`${process.env.REACT_APP_API_HOST}/barbershop/${id}`)
+    let barbershop = await axios.get(`${API}/barbershop/${id}`)
       
       if(barbershop !== undefined && barbershop.status === 200) {
       dispatch({type: 'GET_BARBERSHOP', payload: barbershop.data})
@@ -107,24 +106,3 @@ export const getBarberShop = (id, history) => async dispatch => {
     console.log(error)
   }
 };
-
-export const getAllBarberShops = () => async dispatch => {
-  try {
-    console.log("masuk");
-    let shops = await axios.get(`${process.env.REACT_APP_API_HOST}/barbershop`)
-   
-      if(shops !== undefined && shops.status === 200) {
-        dispatch({type: 'GET_ALL_BARBER', payload: shops.data})
-        
-
-      }
-  } catch(error) {
-    console.log(error);
-    
-  }
-}
-=======
-export * from "./User"
-export * from "./Barbershop"
-export * from "./Appointment"
->>>>>>> ac163fea5c21dc68bbdd302cfe869097967de16c
