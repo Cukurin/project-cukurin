@@ -2,6 +2,7 @@ import React from "react";
 import DatePicker from "react-datepicker";
 import Swal from 'sweetalert';
 import "react-datepicker/dist/react-datepicker.css";
+import './css/bookingModal.css'
 
 class AppointmentModal extends React.Component {
   state = {
@@ -64,7 +65,7 @@ class AppointmentModal extends React.Component {
                  />
 
                 </form>
-                <p>Picka a date</p>
+                <p>Pick a date</p>
                 <DatePicker
                   selected={this.state.startDate}
                   onChange={this.handleChange}
