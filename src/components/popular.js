@@ -21,7 +21,7 @@ const Popular = props => {
         <h1 className='title-popular'>Popular with Cukurin Users</h1>
       </Fade>
 
-      <CardGroup>
+      <CardGroup className="containerCardPopular">
         <Card
           className="cardpack wow bounceInDown"
           data-wow-duration="1.5s"
