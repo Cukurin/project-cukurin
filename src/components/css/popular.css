@@ -34,3 +34,6 @@ h1.title-popular {
 .containerCardPopular{
   margin: 0px 10px 55px 10px;
 }
+a{
+  text-decoration: none;
+}

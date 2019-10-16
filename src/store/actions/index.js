@@ -95,7 +95,7 @@ export const idUser = history => {
 
 export const getBarberShop = (id, history) => async dispatch => {
   try {
-    let barbershop = await axios.get(`${API}/barbershop/${id}`)
+    let barbershop = await axios.get(`${process.env.REACT_APP_API_HOST}/barbershop/${id}`)
       
       if(barbershop !== undefined && barbershop.status === 200) {
       dispatch({type: 'GET_BARBERSHOP', payload: barbershop.data})
@@ -106,3 +106,19 @@ export const getBarberShop = (id, history) => async dispatch => {
     console.log(error)
   }
 };
+
+export const getAllBarberShops = () => async dispatch => {
+  try {
+    console.log("masuk");
+    let shops = await axios.get(`${process.env.REACT_APP_API_HOST}/barbershop`)
+   
+      if(shops !== undefined && shops.status === 200) {
+        dispatch({type: 'GET_ALL_BARBER', payload: shops.data})
+        
+
+      }
+  } catch(error) {
+    console.log(error);
+    
+  }
+}

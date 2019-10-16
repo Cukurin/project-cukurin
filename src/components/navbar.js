@@ -65,7 +65,7 @@ class NavBar extends React.Component {
                   </DropdownToggle>
                 )}
 
-                <DropdownMenu right style={{ backgroundColor: "#2D2A2A" }}>
+                <DropdownMenu right style={{ backgroundColor: "#2D2A2A", textDecoration:'none' }}>
                   {Cookies.get("token") ? (
                     <Link to="/profile">
                       <DropdownItem style={{ color: "#F48E16" }}>

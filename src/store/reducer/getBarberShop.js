@@ -3,8 +3,6 @@ const defaultState = {
 }
 
 const getBarberShop = (state = defaultState, action) => {
-  console.log(state);
-  
   switch (action.type) {
     
     case "GET_BARBERSHOP":

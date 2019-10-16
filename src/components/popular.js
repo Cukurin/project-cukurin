@@ -13,24 +13,36 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { Fade } from "react-reveal";
+import { getAllBarberShops } from '../store/actions'
+import { connect } from 'react-redux'
 
-const Popular = props => {
-  return (
-    <div className="container-fluid-popular">
-      <Fade left>
-        <h1 className='title-popular'>Popular with Cukurin Users</h1>
-      </Fade>
+class Popular extends React.Component {
+  componentDidMount() {
+    
+    this.props.getAllBarberShops()
+    
+  }
 
-      <CardGroup className="containerCardPopular">
+  render() {
+   
+   const {shops} = this.props.shops
+    
+   console.log({shops}, 'awdawd');
+   
+   let list = shops.slice(0, 4).map(shop => {
+     return(
+      //  <div>
+      //    <div className="container-popular">
+      
         <Card
           className="cardpack wow bounceInDown"
           data-wow-duration="1.5s"
           data-wow-delay="0.3s"
           style={{ margin: "10px", border: "1px solid black" }}
         >
-          <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
+          <CardImg top width="100%" style={{height: '250px', backgroundSize: 'cover'}} src={shop.imageUrl} alt="Card image cap" />
           <CardBody>
-            <CardTitle>Ian Barbershop</CardTitle>
+            <CardTitle>{shop.name}</CardTitle>
             <CardSubtitle>
               <span className="fa fa-star checked"></span>
               <span className="fa fa-star checked"></span>
@@ -39,9 +51,7 @@ const Popular = props => {
               <span className="fa fa-star checked"></span>
             </CardSubtitle>
             <CardText>
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This card has even longer content
-              than the first to show that equal height action.
+              {shop.phoneNumber}
             </CardText>
             <Link to="/search">
               {" "}
@@ -49,80 +59,39 @@ const Popular = props => {
             </Link>
           </CardBody>
         </Card>
-        <Card
-          className="cardpack wow bounceInDown"
-          data-wow-duration="1.5s"
-          data-wow-delay="0.6s"
-          style={{ margin: "10px", border: "1px solid black" }}
-        >
-          <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
-          <CardBody>
-            <CardTitle>Nico Cukur</CardTitle>
-            <CardSubtitle>
-              <span className="fa fa-star checked"></span>
-              <span className="fa fa-star checked"></span>
-              <span className="fa fa-star checked"></span>
-              <span className="fa fa-star checked"></span>
-              <span className="fa fa-star checked"></span>
-            </CardSubtitle>
-            <CardText>
-              This card has supporting text below as a natural lead-in to
-              additional content.
-            </CardText>
-            <Button className="btn btn-warning">Read More</Button>
-          </CardBody>
-        </Card>
-        <Card
-          className="cardpack wow bounceInDown"
-          data-wow-duration="1.5s"
-          data-wow-delay="0.9s"
-          style={{ margin: "10px", border: "1px solid black" }}
-        >
-          <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
-          <CardBody>
-            <CardTitle>Ido BarberShop</CardTitle>
-            <CardSubtitle>
-              <span className="fa fa-star checked"></span>
-              <span className="fa fa-star checked"></span>
-              <span className="fa fa-star checked"></span>
-              <span className="fa fa-star checked"></span>
-              <span className="fa fa-star checked"></span>
-            </CardSubtitle>
-            <CardText>
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This card has even longer content
-              than the first to show that equal height action.
-            </CardText>
-            <Button className="btn btn-warning">Read More</Button>
-          </CardBody>
-        </Card>
-        <Card
-          className="cardpack wow bounceInDown"
-          data-wow-duration="1.5s"
-          data-wow-delay="1.2s"
-          style={{ margin: "10px", border: "1px solid black" }}
-        >
-          <CardImg top width="100%" src="assets/pp.jpeg" alt="Card image cap" />
-          <CardBody>
-            <CardTitle>Auzan Semir</CardTitle>
-            <CardSubtitle>
-              <span className="fa fa-star checked"></span>
-              <span className="fa fa-star checked"></span>
-              <span className="fa fa-star checked"></span>
-              <span className="fa fa-star checked"></span>
-              <span className="fa fa-star"></span>
-            </CardSubtitle>
-            <CardText>
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This card has even longer content
-              than the first to show that equal height action.
-            </CardText>
-            <Button className="btn btn-warning">Read More</Button>
-          </CardBody>
-        </Card>
-      </CardGroup>
-    </div>
-  );
+      
+    // </div>
+    //    </div>
+     )
+   })
+   return(
+     <div>
+      <Fade left>
+        <h1 className='title-popular'>Popular with Cukurin Users</h1>
+      </Fade>
+      <div className="container-fluid">
+        <div className="row">
+       <div className="col-auto mr-auto">
+       <CardGroup className="containerCardPopular">
+       {list}
+       </CardGroup>
+       </div>
+       </div>
+       </div>
+     </div>
+   )
 };
+}
 
-export default Popular;
+const mapStateToProps = state => {
+  return {
+    shops: state.shops
+  }
+}
+const mapDispatchToProps = dispatch => {
+  return {
+    getAllBarberShops: () => dispatch(getAllBarberShops())
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Popular);
