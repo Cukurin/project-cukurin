@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Background from "../assets/bgtop.jpg";
 import "./css/header.css";
 import { Flip } from "react-reveal";
+import {Link} from 'react-router-dom'
 
 let sectionStyle = {
   width: "100%",
@@ -24,9 +25,9 @@ class Header extends Component {
                   <div className="form-group center">
                     <label htmlFor="search"></label>
                     <div className="container">
-                     <button className="btn btn-warning lg">
+                     <Link to="/search"><button className="btn btn-warning lg">
                      <h6><i className="fa fa-cut"> </i> Take me there</h6>
-                     </button>
+                     </button></Link>
                     </div>
                     <small id="search" className="form-text text-muted">
                       Search your best Barbershop
