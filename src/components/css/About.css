@@ -1,0 +1,26 @@
+.top-area {
+  height: 60vh;
+  width: 100%;
+}
+.text {
+  margin: 10px 0 0 10px;
+}
+.image-holder img {
+ border-radius: 70px;
+ background-position: center;
+ background-size: cover;
+ margin-bottom: 20px;
+}
+
+.team {
+  margin-top: 100px;
+  height: 60vh;
+  width: 100%;
+}
+
+.card {
+  margin: 27px;
+}
+.card-img-top:hover {
+  opacity: 0.5;
+}

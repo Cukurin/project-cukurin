@@ -84,6 +84,11 @@ class NavBar extends React.Component {
                       Register
                     </DropdownItem>
                   </Link>
+                  <Link to="/about">
+                    <DropdownItem style={{ color: "#F48E16" }}>
+                      About Us
+                    </DropdownItem>
+                  </Link>
                   <Link to="/search">
                     <DropdownItem style={{ color: "#F48E16" }}>
                       Search

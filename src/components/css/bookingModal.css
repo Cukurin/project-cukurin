@@ -1,0 +1,11 @@
+.modal-content {
+  border-radius: 30px;
+  background-color: rgba(200, 200, 20, 0.9);
+  color: black;
+}
+.modal-title {
+  color: black;
+}
+hr {
+  color: black;
+}

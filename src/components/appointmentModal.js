@@ -4,6 +4,7 @@ import Swal from "sweetalert";
 import { connect } from "react-redux";
 import { AddAppointment } from "../store/actions";
 import "react-datepicker/dist/react-datepicker.css";
+import './css/bookingModal.css'
 
 class AppointmentModal extends React.Component {
   constructor(props) {
@@ -79,6 +80,7 @@ class AppointmentModal extends React.Component {
                 </button>
               </div>
               <div class="modal-body">
+
                 {/* <form onChange={this.handleForm}>
                   <input
                     type="text"
