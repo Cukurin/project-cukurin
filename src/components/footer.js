@@ -22,33 +22,7 @@ const Footer = () => {
                 </a>
               </li>
             </ul>
-          </div>
-          <div className="isiContainerFooter">
-            <div className="containerTechnology">
-              <ul>
-                <div className='isiContainerTechnology'>
-                  
-                  <spans className='technology'>Technology that we use</spans>
-                  <div className='isiContainerTechnology1'>
-                    <li className="LogoHtml"></li>
-                    <li className="LogoCSS"></li>
-                    <li className="LogoJs"></li>
-                    <li className="LogoReact"></li>
-                    <li className="LogoRedux"></li>
-                    <li className="LogoGoogleMaps"></li>
-                  </div>
-                  <div className='isiContainerTechnology2'>
-                    <li className="LogoNodeJs"></li>
-                    <li className="LogoMongoDB"></li>
-                    <li className="LogoMongoose"></li>
-                    <li className="LogoExpress"></li>
-                  </div>
-                  
-                </div>
-              </ul>
-            </div>
-            <div className="containerPatner"></div>
-          </div>
+          </div>      
         </div>
         <div className="footer-copyright text-center py-3">
           © 2019 Copyright Cukurin Team

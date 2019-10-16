@@ -29,6 +29,12 @@ class About extends Component {
           </div>
         </div>
         <br/><br/>
+
+        {/* pendaftaran barbershop baru */}
+
+
+        {/* -- */}
+
         {/* carousel di isi pake foto bujang */}
         <h2 style={{textAlign:"center"}}>Team Cukurin</h2>
         <div className="row team">
@@ -66,6 +72,35 @@ class About extends Component {
       </div>
        
       </div>
+      <hr/>
+      <br/><br/><br/>
+
+      <div className="isiContainerFooter">
+            <div className="containerTechnology">
+              <ul>
+                <div className='isiContainerTechnology'>
+                  
+                  <spans className='technology'>Technology that we use</spans>
+                  <div className='isiContainerTechnology1'>
+                    <li className="LogoHtml"></li>
+                    <li className="LogoCSS"></li>
+                    <li className="LogoJs"></li>
+                    <li className="LogoReact"></li>
+                    <li className="LogoRedux"></li>
+                    <li className="LogoGoogleMaps"></li>
+                  </div>
+                  <div className='isiContainerTechnology2'>
+                    <li className="LogoNodeJs"></li>
+                    <li className="LogoMongoDB"></li>
+                    <li className="LogoMongoose"></li>
+                    <li className="LogoExpress"></li>
+                  </div>
+                  
+                </div>
+              </ul>
+            </div>
+            <div className="containerPatner"></div>
+          </div>
       </div>
     );
   }
