@@ -31,6 +31,7 @@ class AppointmentModal extends React.Component {
   };
 
   handleSubmit = event => {
+    console.log(this.props.userData, "wkwkwkwk");
     event.preventDefault();
     console.log(this.props, "porps");
 
@@ -62,7 +63,11 @@ class AppointmentModal extends React.Component {
                 </button>
               </div>
               <div class="modal-body">
+<<<<<<< HEAD
                 {/* <form onChange={this.handleForm}>
+=======
+                <form onChange={this.handleForm}>
+>>>>>>> ac89e44608d700cf14d7381f5c1245d06022b124
                   <input
                     type="text"
                     name="Name"
