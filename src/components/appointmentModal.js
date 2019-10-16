@@ -4,7 +4,6 @@ import Swal from "sweetalert";
 import { connect } from "react-redux";
 import { AddAppointment } from "../store/actions";
 import "react-datepicker/dist/react-datepicker.css";
-import './css/bookingModal.css'
 
 class AppointmentModal extends React.Component {
   constructor(props) {
@@ -18,13 +17,13 @@ class AppointmentModal extends React.Component {
     };
   }
 
-  // handleChange = date => {
-  //   this.setState({
-  //     date
-  //   });
-  // };
+  handleChange = date => {
+    this.setState({
+      date
+    });
+  };
 
-  handleChange = event => {
+  handleForm = event => {
     this.setState({
       ...this.state,
       [event.target.name]: event.target.value
@@ -35,33 +34,16 @@ class AppointmentModal extends React.Component {
     event.preventDefault();
     console.log(this.props, "porps");
 
-    // const { date, service, isDone, ...rest } = this.state;
     const values = {
       ...this.state,
       user: this.props.user._id,
       barbershop: this.props.barbershop._id
     };
 
-    console.log(values, "values");
-
     this.props.dispatch(AddAppointment(values, this.props.history));
-
-    // Swal("Good job!", "Booking Berhasil!", "success");
   };
 
   render() {
-    // const PickerCustom = ({ value, onClick }) => (
-    //   <div class="input-group mb-3">
-    //     <div class="input-group-prepend">
-    //       <label class="input-group-text" for="inputGroupSelect01">
-    //         Date
-    //       </label>
-    //     </div>
-    //     <div class="input-group-prepend">
-    //       {value}
-    //     </div>
-    //   </div>
-    // );
 
     return (
       <div className="container">
@@ -80,7 +62,6 @@ class AppointmentModal extends React.Component {
                 </button>
               </div>
               <div class="modal-body">
-
                 {/* <form onChange={this.handleForm}>
                   <input
                     type="text"
@@ -108,7 +89,7 @@ class AppointmentModal extends React.Component {
                   <select
                     name="service"
                     selected={this.state.service}
-                    onChange={this.handleChange}
+                    onChange={this.handleForm}
                     class="custom-select"
                     id="inputGroupSelect01"
                   >
@@ -124,11 +105,11 @@ class AppointmentModal extends React.Component {
                   name="date"
                   selected={this.state.date}
                   onChange={this.handleChange}
+                  dateFormat="yyyy-M-dd"
                   // showTimeSelect
                   // timeFormat="HH:mm"
                   // dateFormat="yyyy-M-dd > h:mm aa"
-                  dateFormat="yyyy-M-dd"
-                  value={this.state.date}
+                  // value={this.state.date}
                   // customInput={<PickerCustom />}
                 />
               </div>

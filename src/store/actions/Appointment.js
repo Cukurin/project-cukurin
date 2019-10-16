@@ -19,17 +19,16 @@ export const AddAppointment = (values, history) => {
   
   axios.post(`${API}/appointment`, values)
     .then(result => {
-      // Swal("Good job!", "", "success");
+      Swal("Yeaay", "You have make Appointment", "success");
       // history.push("/");
-      console.log(result);
+      console.log(result, "result");
+      return {
+        type: "ADD_APPOINTMENT",
+        values
+      };
     })
     .catch(error => {
-      console.log(error);
+      console.log(error, "error");
       Swal("Oops", "Something wrong when make appointment", "error");
     });
-
-  return {
-    type: "registerUser",
-    values
-  };
 };
