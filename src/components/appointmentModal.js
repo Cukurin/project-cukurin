@@ -13,6 +13,14 @@ class AppointmentModal extends React.Component {
       startDate: date
     });
   };
+  handleForm = event => {
+    this.setState({
+      ...this.state,
+      [event.target.name] : event.target.value
+    })
+    console.log(this.state);
+  }
+  
 
   handleSubmit = event => {
     event.preventDefault();
@@ -40,6 +48,22 @@ class AppointmentModal extends React.Component {
                 </button>
               </div>
               <div class="modal-body">
+                <form onChange={this.handleForm}>
+                  
+                  <input type="text"
+                   name="Name"
+                  placeholder="Your Name"
+                  value={this.state.name}
+                  
+                  /> 
+                  <br/><br/>
+                  <input type="text"
+                  name="Phone"
+                  value={this.state.phone} 
+                  placeholder="Your Phone Number"
+                 />
+
+                </form>
                 <p>Picka a date</p>
                 <DatePicker
                   selected={this.state.startDate}
