@@ -2,7 +2,7 @@ const defaultState = {
   shops: []
 }
 
-const getAllBarberShops = (state = defaultState, action) => {
+const getAllBarbershop = (state = defaultState, action) => {
   
   switch(action.type) {
     case 'GET_ALL_BARBER':
@@ -15,4 +15,4 @@ const getAllBarberShops = (state = defaultState, action) => {
 }
 
 
-export default getAllBarberShops
+export default getAllBarbershop

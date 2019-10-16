@@ -13,13 +13,14 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { Fade } from "react-reveal";
-import { getAllBarberShops } from '../store/actions'
+import { getAllBarbershop } from '../store/actions'
+
 import { connect } from 'react-redux'
 
 class Popular extends React.Component {
   componentDidMount() {
     
-    this.props.getAllBarberShops()
+    this.props.getAllBarbershop()
     
   }
 
@@ -88,9 +89,10 @@ const mapStateToProps = state => {
     shops: state.shops
   }
 }
+
 const mapDispatchToProps = dispatch => {
   return {
-    getAllBarberShops: () => dispatch(getAllBarberShops())
+    getAllBarbershop: () => dispatch(getAllBarbershop())
   }
 }
 
