@@ -17,12 +17,13 @@ class About extends Component {
           <div className="col">
             <div className="text">
             <h2> Who we Are</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident aliquam voluptate, repellendus dicta quasi expedita neque nostrum obcaecati doloremque illo autem totam? Itaque ratione, tempore minus aperiam nobis non maxime vitae. Doloribus a consequatur, accusamus dolorem tempora culpa corrupti, aliquam unde, quaerat harum sit architecto neque error eius soluta. Placeat?</p>
+            <p>In modern times appearance is an important factor where one's personality will draw attention from how that person looks. Good appearance can also increase self-confidence, attract the attention of others and increase the confidence of others. Not only women who are used to preening, now men are already aware of the importance of appearance. This can be a new opportunity for business people to compete in providing goods or services that can meet the demand related to the purchase.
+                Therefore, we took the initiative to run a business in the field of haircutting and shaving (barbershop) in order to obtain the opportunities that exist. That's related to haircut services that are easy to do and do not need to cost more than other businesses.</p>
             </div>
           </div>
           <div className="col">
             <div className="image-holder">
-              <img src={Image} style={{height: '300px'}} alt="kadal"/>
+              <img src={Image} style={{height: '300px', marginTop: '100px'}} alt="kadal"/>
 
             </div>
             </div>

@@ -26,9 +26,9 @@ class Header extends Component {
                 <div className="form-group center">
                   <label htmlFor="search"></label>
                   <div className="container-btn">
-                    <button className="btnSearch">
+                    <Link to="/search"><button className="btnSearch">
                         <i> </i> Take me there
-                    </button>
+                    </button></Link>
                   </div>
                 </div>
               </div>
