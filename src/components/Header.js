@@ -24,13 +24,9 @@ class Header extends Component {
                   <div className="form-group center">
                     <label htmlFor="search"></label>
                     <div className="container">
-                      <input
-                        type="text"
-                        className="form-control search"
-                        id="search"
-                        aria-describedby="search"
-                        placeholder="Search..."
-                      />
+                     <button className="btn btn-warning lg">
+                     <h6><i className="fa fa-cut"> </i> Take me there</h6>
+                     </button>
                     </div>
                     <small id="search" className="form-text text-muted">
                       Search your best Barbershop

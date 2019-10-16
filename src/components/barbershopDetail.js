@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Iframe from 'react-iframe'
 import {getBarberShop} from '../store/actions'
-import AppointmentModal from './appointmentModal';
+import AppointmentModal from './appointmentModal'
 
 class barbershopDetail extends Component {
 
@@ -12,8 +11,7 @@ class barbershopDetail extends Component {
   
   render() {
     console.log(this.props.barbershop, "props");
-    const { barbershop:{address, name, imageUrl , services, phoneNumber, lat, lng}}=this.props.barbershop
-    console.log(lat);
+    const { barbershop:{address, name, imageUrl , services, phoneNumber}}=this.props.barbershop
     
     
     
@@ -50,7 +48,7 @@ class barbershopDetail extends Component {
             </div>
             <div className="row">
               <section className="barbershop-detail" style={{marginTop: '20px', marginLeft:'25px'}}>
-                <h6>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis iure quasi repellendus placeat atque voluptas, hic laboriosam sint nam officiis.</h6>
+              <h6>Untuk membuat jasa barbershop kami unik dan mampu menghadapi persaingan, kami membuat beberapa inovasi yang mampu meningkatkan daya saing dan juga menjadi ciri khas yang mampu menarik perhatian pelanggan dengan harapan dapat meningkatkan permintaan.</h6>
               </section>
             </div>
             <div className="row" style={{marginTop: '20px', marginLeft:'10px'}}>
@@ -74,17 +72,12 @@ class barbershopDetail extends Component {
             <div className="row" style={{marginTop: '20px', marginLeft:'10px'}}>
               <h6>{address} - {phoneNumber}</h6>
             </div>
-            <Iframe src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0355930263654!2d${lng}22201307!3d${lat}9890469535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x98abbfacdfba086a!2s${name}!5e0!3m2!1sid!2sid!4v1571028291842!5m2!1sid!2sid`} width="100%" height="500px" frameborder="0" allowfullscreen=""></Iframe>
-          {/* <Iframe 
-            width="100%" 
-            height="500" 
-            frameborder="0" 
-            scrolling="no" 
-            marginheight="0" 
-            marginwidth="0" 
-            src={`https://maps.google.com/maps/embed?pb=${lat},${lng}+&hl=es;z=14&amp;output=embed`}
-          >
-          </Iframe> */}
+            {/* <Iframe src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.0355930263654!2d${lng}22201307!3d${lat}9890469535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x98abbfacdfba086a!2s${name}!5e0!3m2!1sid!2sid!4v1571028291842!5m2!1sid!2sid`} width="100%" height="500px" frameborder="0" allowfullscreen=""></Iframe> */}
+            <div className="map" style={{width: '100%'}}>
+                
+
+            </div>
+
         </div>
       </div>
     );

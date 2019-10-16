@@ -42,6 +42,8 @@ class NavBar extends React.Component {
     window.location.reload();
   };
   render() {
+    console.log(this.props);
+    
     return (
       <div>
         <Navbar style={{ backgroundColor: "#2D2A2A" }} light expand="md">
@@ -54,8 +56,8 @@ class NavBar extends React.Component {
               <UncontrolledDropdown nav inNavbar>
                 {Cookies.get("token") ? (
                   <DropdownToggle nav caret style={{ color: "#F48E16" }}>
-                    <span>welcome, </span>
-                    {this.props.userData.username}
+                    <span>welcome, {this.props.userData.username} </span>
+                    
                   </DropdownToggle>
                 ) : (
                   <DropdownToggle nav caret style={{ color: "#F48E16" }}>
@@ -106,7 +108,7 @@ class NavBar extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state, "state");
+  console.log(state, "state state");
   return {
     userData: state.GetUserName.userData,
     error: state.GetUserName.error

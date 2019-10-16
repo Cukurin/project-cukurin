@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import "./css/shop.css";
-import {getBarberShop} from '../store/actions'
 import { connect } from 'react-redux';
 import {withRouter} from 'react-router-dom'
 

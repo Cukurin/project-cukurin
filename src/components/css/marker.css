@@ -6,6 +6,7 @@
   text-align: center;
   font-size: 12px;
   padding: 4px 0;
+  color: black;
 }
 .marker.selected {
   background-color: yellow;

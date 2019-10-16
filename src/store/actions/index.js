@@ -38,6 +38,7 @@ export const LoginUser = (values, history) => {
     .then(result => {
       // console.log(result.data, "result");
       Cookie.set("token", result.data.token);
+      console.log(result.data.token)
       Swal("Good job!", "Login Success!", "success");
       history.push("/");
       // window.location.reload();
