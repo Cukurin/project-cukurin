@@ -19,8 +19,6 @@ import { connect } from "react-redux";
 
 class NavBar extends React.Component {
   componentDidMount() {
-    // console.log(this.props,'profile');
-
     this.props.getUserAction(this.props.history);
   }
 
@@ -42,8 +40,6 @@ class NavBar extends React.Component {
     window.location.reload();
   };
   render() {
-    console.log(this.props);
-    
     return (
       <div>
         <Navbar style={{ backgroundColor: "#2D2A2A" }} light expand="md">
@@ -57,7 +53,6 @@ class NavBar extends React.Component {
                 {Cookies.get("token") ? (
                   <DropdownToggle nav caret style={{ color: "#F48E16" }}>
                     <span>welcome, {this.props.userData.username} </span>
-                    
                   </DropdownToggle>
                 ) : (
                   <DropdownToggle nav caret style={{ color: "#F48E16" }}>
@@ -65,7 +60,10 @@ class NavBar extends React.Component {
                   </DropdownToggle>
                 )}
 
-                <DropdownMenu right style={{ backgroundColor: "#2D2A2A", textDecoration:'none' }}>
+                <DropdownMenu
+                  right
+                  style={{ backgroundColor: "#2D2A2A", textDecoration: "none" }}
+                >
                   {Cookies.get("token") ? (
                     <Link to="/profile">
                       <DropdownItem style={{ color: "#F48E16" }}>
@@ -113,7 +111,6 @@ class NavBar extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state, "state state");
   return {
     userData: state.GetUserName.userData,
     error: state.GetUserName.error
