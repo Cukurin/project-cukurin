@@ -7,7 +7,8 @@ import {Link} from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <div className="container-fluid" style={{backgroundColor:'black'}}>
+    <div className="container-fluid footer" style={{backgroundColor:'black'}}>
+      <div className="col">
       <Fade>
       <footer className="page-footer font-small mdb-color pt-4">
         {/* Footer Links */}
@@ -84,8 +85,6 @@ const Footer = () => {
                       <i className="fa fa-twitter" />
                     </Link>
                   </li>
-                 
-                 
                 </ul>
               </div>
             </div>
@@ -96,6 +95,7 @@ const Footer = () => {
         {/* Footer Links */}
       </footer>
       </Fade>
+      </div>
     </div>
   );
 };

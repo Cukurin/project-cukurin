@@ -1,3 +1,23 @@
+.row {
+  min-height: 100%;
+  position: relative;
+}
+html {
+  height: 100%;
+}
+
+/* super duper responsive  */
+@media (max-width: 575px) and (max-height: 1336px){
+  .footer {
+    position: absolute;
+    bottom: 100;
+    margin: 300% 0 0 0;
+    background-color: #000 !important;
+    width: 100%;
+  }
+}
+
+
 h1,h3,h4,h6 {
   font-family: 'Roboto Mono', monospace;
 }
