@@ -1,5 +1,5 @@
 import axios from "axios";
-import Axios from 'axios';
+import Axios from "axios";
 import Cookie from "js-cookie";
 import Swal from "sweetalert";
 import jwt from "jsonwebtoken";
@@ -13,19 +13,20 @@ const handleError = error => {
   };
 };
 
-export const AddAppointment = (values, history) => {
+export const AddAppointment = (values, history) => dispatch => {
   // console.log(history,'history');
-  console.log(values, "values")
-  
-  axios.post(`${API}/appointment`, values)
+  console.log(values, "values");
+
+  axios
+    .post(`${API}/appointment`, values)
     .then(result => {
       Swal("Yeaay", "You have make Appointment", "success");
       // history.push("/");
       console.log(result, "result");
-      return {
+      dispatch({
         type: "ADD_APPOINTMENT",
         values
-      };
+      });
     })
     .catch(error => {
       console.log(error, "error");

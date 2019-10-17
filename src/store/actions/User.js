@@ -13,7 +13,7 @@ const handleError = error => {
   };
 };
 
-export const RegisterUser = (values, history) => {
+export const RegisterUser = (values, history) => dispatch =>{
   // console.log(history,'history');
   
   axios.post(`${API}/user`, values)
@@ -21,16 +21,18 @@ export const RegisterUser = (values, history) => {
       Swal("Good job!", "Pendaftaran Berhasil!", "success");
       history.push("/login");
       console.log(result);
+    
+    dispatch ({
+      type: "registerUser",
+      values
     })
+  })
     .catch(error => {
       console.log(error);
       Swal("Oops", "Username atau Email Sudah terdaftar", "error");
     });
 
-  return {
-    type: "registerUser",
-    values
-  };
+  ;
 };
 
 export const LoginUser = (values, history) => {

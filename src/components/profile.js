@@ -65,7 +65,6 @@ class Profile extends React.Component {
                                 <td>{object.service}</td>
                               </tr>
                         ]
-                        console.log(object, "object");
                       })}
                     </Table>
                   </CardBody>

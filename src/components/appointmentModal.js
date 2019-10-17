@@ -3,6 +3,7 @@ import DatePicker from "react-datepicker";
 import { connect } from "react-redux";
 import { AddAppointment } from "../store/actions";
 import "react-datepicker/dist/react-datepicker.css";
+import {withRouter} from 'react-router-dom'
 
 class AppointmentModal extends React.Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class AppointmentModal extends React.Component {
   handleSubmit = event => {
     console.log(this.props.userData, "wkwkwkwk");
     event.preventDefault();
-    console.log(this.props, "porps");
+    console.log(this.props, "porps12123123");
 
     const values = {
       ...this.state,
@@ -40,7 +41,7 @@ class AppointmentModal extends React.Component {
       barbershop: this.props.barbershop._id
     };
 
-    this.props.dispatch(AddAppointment(values, this.props.history));
+    this.props.dispatch(AddAppointment({...values}, this.props.history));
   };
 
   render() {
@@ -152,7 +153,7 @@ const mapStateToProps = state => {
 //   }
 // }
 
-export default connect(
+export default withRouter(connect(
   // mapDispatchToProps,
   mapStateToProps
-)(AppointmentModal);
+)(AppointmentModal));
