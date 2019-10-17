@@ -1,3 +1,17 @@
+h1,h3,h4,h6 {
+  font-family: 'Roboto Mono', monospace;
+}
+h2, h5 {
+  font-family: 'Mansalva', cursive;
+}
+a {
+  color: gold;
+  text-decoration: none;
+}
+a:hover {
+  color: salmon;
+  text-decoration: none;
+}
 .footer {
   width: 100%;
   background-color: #393939;

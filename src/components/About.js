@@ -68,7 +68,7 @@ class About extends Component {
 					<div className="panel panel-default">
 							<div className="panel-heading">
 								<h2 className="panel-title text-center">
-								<span className="glyphicon glyphicon-upload"></span> Register your Barbershop immediately
+								<span id="#barberReg" className="glyphicon glyphicon-upload"></span> Register your Barbershop immediately
 								</h2>
 							</div>
 							<div className="panel-body">

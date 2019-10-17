@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { idUser } from "../store/actions";
 import { withRouter } from "react-router-dom";
 import "./css/profile.css";
-import { Zoom, Fade } from "react-reveal";
+import { Zoom } from "react-reveal";
 import { UncontrolledCollapse, Button, CardBody, Card } from "reactstrap";
 import { Table } from "reactstrap";
 class Profile extends React.Component {
@@ -17,7 +17,7 @@ class Profile extends React.Component {
     this.state = { show: false };
   }
 
-  render() {
+  render() {  
     console.log(this.props, "render props");
 
     return (
