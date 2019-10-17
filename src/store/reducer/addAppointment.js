@@ -1,16 +1,16 @@
-const AddAppointment = (state = {}, action) => {
+// const AddAppointment = (state = {}, action) => {
   
-  switch (action.type) {
+//   switch (action.type) {
     
-    case "addAppointment":
-      return {
-        ...state,
+//     case "addAppointment":
+//       return {
+//         ...state,
         
-          values: action.values
+//           values: action.values
         
       
-      }
-    default:
-      return state;
-  }
-};
+//       }
+//     default:
+//       return state;
+//   }
+// };
