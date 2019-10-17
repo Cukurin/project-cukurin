@@ -14,27 +14,31 @@ import {
 import { Link } from "react-router-dom";
 import { Fade } from "react-reveal";
 import { getAllBarbershop } from '../store/actions'
-
+import { getBarberShop } from '../store/actions'
+import {withRouter} from 'react-router-dom'
 import { connect } from 'react-redux'
 
 class Popular extends React.Component {
   componentDidMount() {
     
-    this.props.getAllBarbershop()
+    this.props.getAllBarbershop(this.props.history)
     
   }
+  handleMove = (id, history) => {
+    this.props.getBarberShop(id, history)
+  console.log(this.props, 'aa props');
+  console.log(this.props.history, 'history');
+  
+  }
+  
 
   render() {
    
    const {shops} = this.props.shops
     
-   console.log({shops}, 'awdawd');
    
-   let list = shops.slice(0, 4).map(shop => {
+   let list = shops.slice(0, 4).map(shop => {     
      return(
-      //  <div>
-      //    <div className="container-popular">
-      
         <Card
           className="cardpack wow bounceInDown"
           data-wow-duration="1.5s"
@@ -54,15 +58,12 @@ class Popular extends React.Component {
             <CardText>
               {shop.phoneNumber}
             </CardText>
-            <Link to="/search">
-              {" "}
-              <Button className="btn btn-warning">Read More</Button>{" "}
-            </Link>
+            
           </CardBody>
+          <Button onClick={()=>this.handleMove(shop._id, this.props.history)} className="btn btn-warning" type="button">Read More</Button>{" "}
+          
+          
         </Card>
-      
-    // </div>
-    //    </div>
      )
    })
    return(
@@ -75,6 +76,7 @@ class Popular extends React.Component {
        <div className="col-auto mr-auto">
        <CardGroup className="containerCardPopular">
        {list}
+
        </CardGroup>
        </div>
        </div>
@@ -86,14 +88,16 @@ class Popular extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    shops: state.shops
+    shops: state.shops,
+    barbershop: state.barbershop
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    getAllBarbershop: () => dispatch(getAllBarbershop())
+    getAllBarbershop: () => dispatch(getAllBarbershop()),
+    getBarberShop : (id, history) => dispatch(getBarberShop(id, history))
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Popular);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Popular))

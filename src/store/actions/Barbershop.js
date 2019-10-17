@@ -20,10 +20,13 @@ export const getOneBarbershop = (id, history) => async dispatch => {
   try {
     let barbershop = await axios.get(`${API}/barbershop/${id}`); 
     console.log(history, "action history");
+    console.log(barbershop.data);
+    
+    const {_id} =this.props.shops
     
     if (barbershop.status === 200) {
-        dispatch({ type: GET_ONE_BARBERSHOP, payload: barbershop.data.result})
-        history.push("/barbershop")
+        dispatch({ type: GET_ONE_BARBERSHOP, payload: barbershop.data})
+        history.push(`/barbershop/${_id}`)
     }
   } catch (error) {
     dispatch({ type: GET_ERRORS, payload: error})

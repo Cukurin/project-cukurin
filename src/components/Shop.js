@@ -16,6 +16,8 @@ class Shop extends Component {
     event.preventDefault()
     const {_id} = this.props.shop
     this.props.history.push(`/barbershop/${_id}`)
+    console.log(this.props.shop, 'shop js latest log');
+    
   }
   //create history - dengan withRouter
 

@@ -36,9 +36,6 @@ class Search extends Component {
       selectedShop: shop,
       id : this.state.shops[0]._id
     })
-    
-    
-    
   }
   
   handleSearch = (event) => {
