@@ -4,7 +4,7 @@ import "./css/search.css";
 import Shop from "./Shop";
 import Marker from "./marker";
 
-const API = process.env.REACT_APP_API_HOST;
+// const API = process.env.REACT_APP_API_HOST;
 // production
 const SERVER = process.env.REACT_APP_API_SERVER;
 
@@ -21,7 +21,7 @@ class Search extends Component {
   }
 
   componentDidMount() {
-    const url = `${API}/barbershop`;
+    const url = `${SERVER}/barbershop`;
     fetch(url)
       .then(response => response.json())
       .then(data => {
