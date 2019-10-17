@@ -1,17 +1,14 @@
 import axios from "axios";
-import Axios from 'axios';
-import Cookie from "js-cookie";
 import Swal from "sweetalert";
-import jwt from "jsonwebtoken";
 
 const API = process.env.REACT_APP_API_HOST;
 
-const handleError = error => {
-  return {
-    type: "HANDLE_ERROR",
-    error
-  };
-};
+// const handleError = error => {
+//   return {
+//     type: "HANDLE_ERROR",
+//     error
+//   };
+// };
 
 export const AddAppointment = (values, history) => {
   // console.log(history,'history');

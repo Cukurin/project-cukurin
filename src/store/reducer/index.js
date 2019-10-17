@@ -4,14 +4,15 @@ import LoginUser from './login'
 import GetUserName from './getUserName'
 import getBarberShop from './getBarberShop'
 import getAllBarberShops from './getAllBarberShop'
-
+import addBarberShop from './addBarberShop'
 
 const allReducers = combineReducers({
   Register,
   LoginUser,
   GetUserName,
   barbershop: getBarberShop,
-  shops: getAllBarberShops
+  shops: getAllBarberShops,
+  addBarberShop
 
 });
 

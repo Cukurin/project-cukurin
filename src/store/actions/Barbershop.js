@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_ALL_BARBERSHOPS, GET_ONE_BARBERSHOP, GET_ERRORS } from "./ActionTypes";
+import { GET_ALL_BARBERSHOPS, GET_ONE_BARBERSHOP, GET_ERRORS, ADD_BARBERSHOP } from "./ActionTypes";
 
 const API = process.env.REACT_APP_API_HOST
 
@@ -32,3 +32,17 @@ export const getOneBarbershop = (id, history) => async dispatch => {
     dispatch({ type: GET_ERRORS, payload: error})
   }
 };
+
+export const addBarberShop = (values, history) => {
+  axios.post(`${API}/barbershop`, values)
+  .then(result => {
+    history.push('/')
+  })
+  .catch(error => {
+    console.log(error);
+  });
+  return {
+    type: ADD_BARBERSHOP,
+    values
+  }
+}

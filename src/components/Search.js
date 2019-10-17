@@ -34,7 +34,6 @@ class Search extends Component {
   selectShop = (shop) => {
     this.setState({
       selectedShop: shop,
-      id : this.state.shops[0]._id
     })
   }
   

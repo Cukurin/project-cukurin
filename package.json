@@ -7,6 +7,7 @@
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "dotenv": "^8.1.0",
+    "filestack-react": "^3.1.0",
     "google-map-react": "^1.1.5",
     "indicative": "^7.2.1",
     "install": "^0.13.0",

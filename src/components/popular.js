@@ -11,7 +11,6 @@ import {
   CardSubtitle,
   CardBody
 } from "reactstrap";
-import { Link } from "react-router-dom";
 import { Fade } from "react-reveal";
 import { getAllBarbershop } from '../store/actions'
 import { getBarberShop } from '../store/actions'

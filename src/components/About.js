@@ -5,8 +5,39 @@ import Nico from '../assets/nico.jpg'
 import Ian from '../assets/ian.jpg'
 import Auzan from '../assets/auzan.jpg'
 import Ido from '../assets/ido.jpg'
-
+import ReactFilestack from 'filestack-react'
+import {addBarberShop} from '../store/actions'
+import {withRouter} from 'react-router-dom'
+import {connect} from 'react-redux'
 class About extends Component {
+  constructor(props) {
+    super(props);
+  
+    this.state = {
+      name: '',
+      address: '',
+      phoneNumber:'',
+      imageUrl:'',
+      services:''
+    }
+    
+  }
+
+  handleChange = event => {
+    this.setState({
+      ...this.state,
+      [event.target.name]: event.target.value
+    });
+  };
+  handleSubmit = event => {
+    event.preventDefault()
+    this.props.dispatch(addBarberShop(this.state, this.props.history))
+    console.log(this.state, "S T A T E")
+    console.log(this.props, "P R O P S");
+    
+    
+  }
+
   render() {
     
     return (
@@ -32,12 +63,90 @@ class About extends Component {
         <br/><br/>
 
         {/* pendaftaran barbershop baru */}
+        <div className="container" style={{margin: '10px 15%'}}>
+        <div className="row" style={{textAlign:""}}>
+				<div className="col-md-offset-2 col-md-8" style={{textAlign:''}}>
+					<div className="panel panel-default">
+							<div className="panel-heading">
+								<h2 className="panel-title text-center">
+								<span className="glyphicon glyphicon-upload"></span> Upload a Product
+								</h2>
+							</div>
+							<div className="panel-body">
+								<form name="product-form" id="product-form" noValidate>
+									<div className="form-group">
+										<label htmlFor="name">Nama Barbershop</label>
+                    <input id="name" 
+                    type="text"
+                    name="name" 
+                    className="form-control" 
+                    placeholder="Enter barbershop name..."
+                    defaultValue={this.state.name} 
+                    onChange={this.handleChange}
+                    required/>
+									</div>
+									<div className="form-group">
+										<label htmlFor="address">Alamat</label>
+                    <input id="address" 
+                    type="text"
+                    name="address" 
+                    className="form-control" 
+                    placeholder="Enter the Address.."
+                    defaultValue={this.state.address}
+                    onChange={this.handleChange}
+                    required/>
+									</div>
+									<div className="form-group">
+										<label htmlFor="phoneNumber">Phone Number</label>
+                    <input id="phoneNumber" 
+                    type="text"
+                    name="phoneNumber"
+                    className="form-control" 
+                    placeholder="Enter the phone number..."
+                    defaultValue={this.state.phoneNumber}
+                    onChange={this.handleChange}
+                    required/>
+									</div>
+                  <div className="form-group">
+										<label htmlFor="services">Service</label>
+                    <input id="services" 
+                    type="text"
+                    name="services"
+                    className="form-control" 
+                    placeholder="Enter one service..."
+                    defaultValue={this.state.services}
+                    onChange={this.handleChange}
+                    required/>
+									</div>
+									
+									<div className="form-group ">
+					          <label htmlFor="picture">Picture</label>
+					          <div className="text-center dropup">
+                    <ReactFilestack
+                     apikey={`AbXd6qLEaT2Wxmcr3XZKGz`}
+                    onSuccess={result => {
+                    console.log(result.filesUploaded[0].url, 'test');
+                    this.setState({
+                      imageUrl: result.filesUploaded[0].url
+                       });
+                   }}
+                   />
+					          </div>
+					        </div>
+									<button type="button" className="btn btn-filestack btn-warning btn-block" onClick={this.handleSubmit}>Upload Barbershop</button>
+								</form>
+							</div>
+					</div>
+				</div>
+			</div>
+      </div>
+
 
 
         {/* -- */}
 
         {/* carousel di isi pake foto bujang */}
-        <h2 style={{textAlign:"center"}}>Team Cukurin</h2>
+        <h2 style={{textAlign:"center", marginTop:'5%'}}>Team Cukurin</h2>
         <div className="row team">
         
         {/* card */}
@@ -107,4 +216,4 @@ class About extends Component {
   }
 }
 
-export default About;
+export default withRouter(connect()(About))
