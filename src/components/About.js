@@ -74,7 +74,7 @@ class About extends Component {
 							<div className="panel-body">
 								<form name="product-form" id="product-form" noValidate>
 									<div className="form-group">
-										<label htmlFor="name">Nama Barbershop</label>
+										<label htmlFor="name">Name</label>
                     <input id="name" 
                     type="text"
                     name="name" 
@@ -85,7 +85,7 @@ class About extends Component {
                     required/>
 									</div>
 									<div className="form-group">
-										<label htmlFor="address">Alamat</label>
+										<label htmlFor="address">Address</label>
                     <input id="address" 
                     type="text"
                     name="address" 

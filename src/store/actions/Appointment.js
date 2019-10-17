@@ -1,9 +1,4 @@
 import axios from "axios";
-<<<<<<< HEAD
-=======
-import Axios from "axios";
-import Cookie from "js-cookie";
->>>>>>> 1339d01b2b245d8bae38d0b881c6318adc4f45a5
 import Swal from "sweetalert";
 
 const API = process.env.REACT_APP_API_HOST;
