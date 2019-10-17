@@ -13,17 +13,17 @@ class Service extends Component {
     return (
       <div
         className="container-fluid-service"
-        style={{ backgroundColor: "#393939", height:'100vh' }}
+        style={{ backgroundColor: "#393939", height:'692px' }}
       >
-        <div className="container" style={{ height: "692px" }}>
-          <div className="card-group" style={{ marginTop: "20px" }}>
+        <div className="container">
+          <div className="card-group row" style={{ }}>
             <div
-              className="card wow fadeIn"
+              className="card wow fadeIn col-md-4 col-xs col.sm"
               data-wow-duration="1.5s"
               data-wow-delay="0.4s"
               style={{ margin: "90px 0 70px 0" }}
             >
-              <img src={logo1} style={{width:'100%', height:'auto'}} className="card-img-top img-responsive" alt="..." />
+              <img src={logo1} style={{maxWidth:'100%', height:'auto'}} className="card-img-top img-responsive" alt="..." />
               <div className="card-body-1">
                 <h5 className="card-title">Find It</h5>
                 <p className="card-text">
@@ -32,12 +32,12 @@ class Service extends Component {
               </div>
             </div>
             <div
-              className="card wow fadeIn"
+              className="card wow fadeIn col-md-4 col-xs col.sm"
               data-wow-duration="1.5s"
               data-wow-delay="0.8s"
               style={{ margin: "100px 0 70px 0" }}
             >
-              <img src={logo2} style={{width:'100%', height:'auto'}}className="card-img-top img-responsive" alt="..." />
+              <img src={logo2} style={{maxWidth:'100%', height:'auto'}}className="card-img-top img-responsive" alt="..." />
               <div className="card-body-2">
                 <h5 className="card-title-2">Book</h5>
                 <p className="card-text">
@@ -47,12 +47,12 @@ class Service extends Component {
               </div>
             </div>
             <div
-              className="card wow fadeIn"
+              className="card wow fadeIn col-md-4 col-xs col.sm"
               data-wow-duration="1.5s"
               data-wow-delay="1.2s"
               style={{ margin: "90px 0 70px 0" }}
             >
-              <img src={logo3} style={{width:'100%', height:'auto'}} className="card-img-top img-responsive" alt="..." />
+              <img src={logo3} style={{maxWidth:'100%', height:'auto'}} className="card-img-top img-responsive" alt="..." />
               <div className="card-body-3">
                 <h5 className="card-title">Enjoy</h5>
                 <p className="card-text">
@@ -61,7 +61,7 @@ class Service extends Component {
               </div>
             </div>
           </div>
-        </div>
+          </div>
       </div>
     );
   }
