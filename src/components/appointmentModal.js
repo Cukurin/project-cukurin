@@ -32,10 +32,7 @@ class AppointmentModal extends React.Component {
   };
 
   handleSubmit = event => {
-    console.log(this.props.userData, "wkwkwkwk");
     event.preventDefault();
-    console.log(this.props, "porps12123123");
-
     if (Cookies.get('token')){
       const values = {
         ...this.state,

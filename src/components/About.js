@@ -9,6 +9,8 @@ import ReactFilestack from 'filestack-react'
 import {addBarberShop} from '../store/actions'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
+
+const API = process.env.REACT_APP_API_FILESTACK
 class About extends Component {
   constructor(props) {
     super(props);
@@ -32,9 +34,6 @@ class About extends Component {
   handleSubmit = event => {
     event.preventDefault()
     this.props.dispatch(addBarberShop(this.state, this.props.history))
-    console.log(this.state, "S T A T E")
-    console.log(this.props, "P R O P S");
-    
     
   }
 
@@ -69,7 +68,7 @@ class About extends Component {
 					<div className="panel panel-default">
 							<div className="panel-heading">
 								<h2 className="panel-title text-center">
-								<span className="glyphicon glyphicon-upload"></span> Upload a Product
+								<span className="glyphicon glyphicon-upload"></span> Register your Barbershop immediately
 								</h2>
 							</div>
 							<div className="panel-body">
@@ -123,9 +122,8 @@ class About extends Component {
 					          <label htmlFor="picture">Picture</label>
 					          <div className="text-center dropup">
                     <ReactFilestack
-                     apikey={`AbXd6qLEaT2Wxmcr3XZKGz`}
+                     apikey={`${API}`}
                     onSuccess={result => {
-                    console.log(result.filesUploaded[0].url, 'test');
                     this.setState({
                       imageUrl: result.filesUploaded[0].url
                        });
