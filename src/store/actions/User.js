@@ -5,6 +5,8 @@ import Swal from "sweetalert";
 import jwt from "jsonwebtoken";
 
 const API = process.env.REACT_APP_API_HOST;
+// production
+const SERVER = process.env.REACT_APP_API_SERVER;
 
 const handleError = error => {
   return {

@@ -1,7 +1,10 @@
 import axios from "axios";
 import Swal from "sweetalert";
 
+// development
 const API = process.env.REACT_APP_API_HOST;
+// production
+const SERVER = process.env.REACT_APP_API_SERVER;
 
 export const AddAppointment = (values, history) => dispatch => {
   console.log(values, "values");

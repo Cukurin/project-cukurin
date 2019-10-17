@@ -5,6 +5,8 @@ import Shop from "./Shop";
 import Marker from "./marker";
 
 const API = process.env.REACT_APP_API_HOST;
+// production
+const SERVER = process.env.REACT_APP_API_SERVER;
 
 class Search extends Component {
   constructor(props) {
