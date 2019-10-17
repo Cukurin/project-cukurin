@@ -82,14 +82,14 @@ class About extends Component {
               <div className="panel panel-default">
                 <div className="panel-heading">
                   <h2 className="panel-title text-center">
-                    <span className="glyphicon glyphicon-upload"></span> Upload
-                    a Product
+                    <span className="glyphicon glyphicon-upload"></span> 
+                    Register your Barbershop immediately
                   </h2>
                 </div>
                 <div className="panel-body">
                   <form name="product-form" id="product-form" noValidate>
                     <div className="form-group">
-                      <label htmlFor="name">Nama Barbershop</label>
+                      <label htmlFor="name">Name</label>
                       <input
                         id="name"
                         type="text"
@@ -102,7 +102,7 @@ class About extends Component {
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="address">Alamat</label>
+                      <label htmlFor="address">Address</label>
                       <input
                         id="address"
                         type="text"
@@ -177,7 +177,7 @@ class About extends Component {
           <div className="card" style={{ width: "220px", height: "250px;" }}>
             <img src={Auzan} className="card-img-top" alt="..." />
             <div className="card-body">
-              <p className="card-text">Auzan</p>
+              <p className="card-text">Auzan A</p>
               <small>Full Stack</small>
             </div>
           </div>
@@ -198,7 +198,7 @@ class About extends Component {
           <div className="card" style={{ width: "220px", height: "250px;" }}>
             <img src={Ido} className="card-img-top" alt="..." />
             <div className="card-body">
-              <p className="card-text">Ridho</p>
+              <p className="card-text">Ridho AM</p>
               <small>Full Stack (Team Leader)</small>
             </div>
           </div>
