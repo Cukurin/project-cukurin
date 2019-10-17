@@ -4,7 +4,8 @@ import { idUser } from "../store/actions";
 import { withRouter } from "react-router-dom";
 import "./css/profile.css";
 import { Zoom, Fade } from "react-reveal";
-
+import { UncontrolledCollapse, Button, CardBody, Card } from "reactstrap";
+import { Table } from "reactstrap";
 class Profile extends React.Component {
   componentDidMount() {
     console.log(this.props, "props");
@@ -14,15 +15,11 @@ class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = { show: false };
-    this.handleClick = this.handleClick.bind(this);
-  }
-  handleClick() {
-    this.setState({ show: !this.state.show });
   }
 
   render() {
     console.log(this.props, "render props");
-    
+
     return (
       <div className="containerBoxProfile">
         <Zoom>
@@ -39,22 +36,41 @@ class Profile extends React.Component {
               </div>
             </ul>
             <div>
-              <Fade top when={this.state.show}>
-                
-              {/* {this.props.userData.appointments && this.props.userData.appointments.map((data, index) => { return (
-
-              <p>{data.appointments}</p>
-              )})} */}
-              <h1>test</h1>
-              </Fade>
-              
-              <button
-                className="buttonHistory"
-                type="button"
-                onClick={this.handleClick}
+              <Button
+                id="toggler"
+                style={{ marginBottom: "1rem" }}
+                className='buttonHistory'
               >
-                {this.state.show}history
-              </button>
+                History
+              </Button>
+              <UncontrolledCollapse toggler="#toggler">
+                <Card>
+                  <CardBody>
+                  <Table dark>
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Barbershop Name</th>
+                        <th>Booking Schedule</th>
+                        <th>Services</th>
+                      </tr>
+                    </thead>
+                    {Array.isArray(this.props.userData.appointments) &&
+                      this.props.userData.appointments.map((object, i) => {
+                        return [
+                              <tr>
+                                <th scope="col">{i+1}</th>
+                                <td>{object.barbershop.name}</td>
+                                <td>{object.createdAt}</td>
+                                <td>{object.service}</td>
+                              </tr>
+                        ]
+                        console.log(object, "object");
+                      })}
+                    </Table>
+                  </CardBody>
+                </Card>
+              </UncontrolledCollapse>
             </div>
           </div>
         </Zoom>
