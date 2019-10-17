@@ -7,6 +7,8 @@ import {
 } from "./ActionTypes";
 
 const API = process.env.REACT_APP_API_HOST;
+// production
+const SERVER = process.env.REACT_APP_API_SERVER;
 
 export const getAllBarbershop = () => async dispatch => {
   try {
