@@ -15,13 +15,7 @@ class Profile extends React.Component {
     this.state = { show: false };
   }
 
-<<<<<<< HEAD
-  render() {  
-    console.log(this.props, "render props");
-
-=======
   render() {
->>>>>>> 3c4e7d4baa29cad259f52334dfeb453d0a19e377
     return (
       <div className="containerBoxProfile">
         <Zoom>
