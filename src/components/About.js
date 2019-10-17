@@ -9,6 +9,8 @@ import ReactFilestack from "filestack-react";
 import { addBarberShop } from "../store/actions";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+
+const API = process.env.REACT_APP_API_FILESTACK;
 class About extends Component {
   constructor(props) {
     super(props);
