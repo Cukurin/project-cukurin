@@ -67,7 +67,7 @@ class About extends Component {
                 <img
                   className="img-responsive"
                   src={Image}
-                  style={{ height: "300px", marginTop: "50px", borderRadius:'20px' }}
+                  style={{ height: "300px", marginTop: "50px", borderRadius:'20px', width:'100%' }}
                   alt="kadal"
                 />
               
@@ -79,9 +79,9 @@ class About extends Component {
         <br />
 
         {/* pendaftaran barbershop baru */}
-        <div className="container wow fadeInUp" style={{ margin: "10px 25%" }}>
-          <div className="row" style={{ textAlign: "" }}>
-            <div className="col-md-offset-2 col-md-8" style={{ textAlign: "" }}>
+        <div className="container wow fadeInUp" style={{ margin: 'auto' }}>
+          <div className="row" style={{ margin: "0 10%" }}>
+            <div className="col-sm-8 mid" style={{marginLeft: '120px'}}>
               <div className="panel panel-default">
                 <div className="panel-heading">
                   <h2 className="panel-title text-center">
@@ -179,28 +179,28 @@ class About extends Component {
         <div className="row" style={{textAlign: 'center'}}>
           {/* card */}
 
-          <div className="card col-md-3">
+          <div className="card col-sm-3">
             <img src={Auzan} style={{height:'300px',backgroundSize: 'cover'}} className="card-img-top img-responsive " alt="..." />
             <div className="card-body">
               <p className="card-text">Auzan A</p>
               <small>Full Stack</small>
             </div>
           </div>
-          <div className="card col-md-3">
+          <div className="card col-sm-3">
             <img src={Ian} style={{height:'300px',backgroundSize: 'cover'}} className="card-img-top img-responsive" alt="..." />
             <div className="card-body">
               <p className="card-text">Afriansyah</p>
               <small>Full Stack</small>
             </div>
           </div>
-          <div className="card col-md-3">
+          <div className="card col-sm-3">
             <img src={Nico} style={{height:'300px',backgroundSize: 'cover'}} className="card-img-top img-responsive" alt="..." />
             <div className="card-body">
               <p className="card-text">Nico Husin</p>
               <small>Full Stack</small>
             </div>
           </div>
-          <div className="card col-md-3">
+          <div className="card col-sm-3">
             <img src={Ido} style={{height:'300px',backgroundSize: 'cover'}}className="card-img-top img-responsive" alt="..." />
             <div className="card-body">
               <p className="card-text">Ridho AM</p>
