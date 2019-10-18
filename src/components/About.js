@@ -145,7 +145,7 @@ class About extends Component {
                       <label htmlFor="picture">Picture</label>
                       <div className="text-center dropup">
                         <ReactFilestack
-                          apikey={`AbXd6qLEaT2Wxmcr3XZKGz`}
+                          apikey={`${API}`}
                           onSuccess={result => {
                             this.setState({
                               imageUrl: result.filesUploaded[0].url
