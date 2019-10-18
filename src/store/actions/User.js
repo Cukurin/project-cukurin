@@ -4,7 +4,9 @@ import Cookie from "js-cookie";
 import Swal from "sweetalert";
 import jwt from "jsonwebtoken";
 
-const API = process.env.REACT_APP_API_HOST;
+// const API = process.env.REACT_APP_API_HOST;
+// production
+const SERVER = process.env.REACT_APP_API_SERVER;
 
 const handleError = error => {
   return {
@@ -15,7 +17,7 @@ const handleError = error => {
 
 export const RegisterUser = (values, history) => dispatch => {
   axios
-    .post(`${API}/user`, values)
+    .post(`${SERVER}/user`, values)
     .then(result => {
       Swal("Good job!", "Pendaftaran Berhasil!", "success");
       history.push("/login");
@@ -33,7 +35,7 @@ export const RegisterUser = (values, history) => dispatch => {
 
 export const LoginUser = (values, history) => {
   axios
-    .post(`${API}/user/login`, values)
+    .post(`${SERVER}/user/login`, values)
     .then(result => {
       Cookie.set("token", result.data.token);
       Swal("Good job!", "Login Success!", "success");
@@ -63,7 +65,7 @@ export const idUser = history => {
     });
 
     if (token && decoded !== undefined) {
-      Axios.get(`${process.env.REACT_APP_API_HOST}/user/${decoded.data._id}`)
+      Axios.get(`${SERVER}/user/${decoded.data._id}`)
         .then(result => {
           dispatch({
             type: "GET_USER",
@@ -81,7 +83,7 @@ export const idUser = history => {
 
 export const getBarberShop = (id, history) => async dispatch => {
   try {
-    let barbershop = await axios.get(`${API}/barbershop/${id}`);
+    let barbershop = await axios.get(`${SERVER}/barbershop/${id}`);
 
     if (barbershop !== undefined && barbershop.status === 200) {
       dispatch({ type: "GET_BARBERSHOP", payload: barbershop.data });

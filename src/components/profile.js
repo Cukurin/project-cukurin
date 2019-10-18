@@ -16,6 +16,7 @@ class Profile extends React.Component {
   }
 
   render() {
+    console.log(this.props.userData)
     return (
       <div className="containerBoxProfile">
         <Zoom>
@@ -54,6 +55,7 @@ class Profile extends React.Component {
                       <tbody>
                         {Array.isArray(this.props.userData.appointments) &&
                           this.props.userData.appointments.map((object, i) => {
+                            console.log(object);
                             return [
                               <tr key={i}>
                                 <th scope="col">{i + 1}</th>

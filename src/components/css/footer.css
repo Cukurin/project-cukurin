@@ -1,3 +1,37 @@
+/* .row {
+  min-height: 100%;
+  position: relative;
+} */
+html {
+  height: 100%;
+}
+
+/* super duper responsive  */
+@media (max-width: 575px) and (max-height: 823px){
+  .footer {
+    position: absolute;
+    bottom: 100;
+    margin: 310% 0 0 0;
+    background-color: #000 !important;
+    width: 100%;
+  }
+}
+
+
+h1,h3,h4,h6 {
+  font-family: 'Roboto Mono', monospace;
+}
+h2, h5 {
+  font-family: 'Mansalva', cursive;
+}
+a {
+  color: gold;
+  text-decoration: none;
+}
+a:hover {
+  color: salmon;
+  text-decoration: none;
+}
 .footer {
   width: 100%;
   background-color: #393939;

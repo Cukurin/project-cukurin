@@ -37,6 +37,7 @@ class About extends Component {
 
   render() {
     return (
+      <div>
       <div className="container">
         <br />
         <div className="top-area">
@@ -62,34 +63,36 @@ class About extends Component {
               </div>
             </div>
             <div className="col">
-              <div className="image-holder">
+              
                 <img
+                  className="img-responsive"
                   src={Image}
-                  style={{ height: "300px", marginTop: "100px" }}
+                  style={{ height: "300px", marginTop: "50px", borderRadius:'20px' }}
                   alt="kadal"
                 />
-              </div>
+              
             </div>
           </div>
+        </div>
         </div>
         <br />
         <br />
 
         {/* pendaftaran barbershop baru */}
-        <div className="container" style={{ margin: "10px 15%" }}>
+        <div className="container wow fadeInUp" style={{ margin: "10px 25%" }}>
           <div className="row" style={{ textAlign: "" }}>
             <div className="col-md-offset-2 col-md-8" style={{ textAlign: "" }}>
               <div className="panel panel-default">
                 <div className="panel-heading">
                   <h2 className="panel-title text-center">
-                    <span className="glyphicon glyphicon-upload"></span> Upload
-                    a Product
+                    <span className="glyphicon glyphicon-upload"></span> 
+                    Register your Barbershop immediately
                   </h2>
                 </div>
                 <div className="panel-body">
                   <form name="product-form" id="product-form" noValidate>
                     <div className="form-group">
-                      <label htmlFor="name">Nama Barbershop</label>
+                      <label htmlFor="name">Name</label>
                       <input
                         id="name"
                         type="text"
@@ -102,7 +105,7 @@ class About extends Component {
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="address">Alamat</label>
+                      <label htmlFor="address">Address</label>
                       <input
                         id="address"
                         type="text"
@@ -172,43 +175,46 @@ class About extends Component {
 
         {/* carousel di isi pake foto bujang */}
         <h2 style={{ textAlign: "center", marginTop: "5%" }}>Team Cukurin</h2>
-        <div className="row team">
+        <div className="container-fluid wow fadeInUp">
+        <div className="row" style={{textAlign: 'center'}}>
           {/* card */}
-          <div className="card" style={{ width: "220px", height: "250px;" }}>
-            <img src={Auzan} className="card-img-top" alt="..." />
+
+          <div className="card col-md-3">
+            <img src={Auzan} style={{height:'300px',backgroundSize: 'cover'}} className="card-img-top img-responsive " alt="..." />
             <div className="card-body">
-              <p className="card-text">Auzan</p>
+              <p className="card-text">Auzan A</p>
               <small>Full Stack</small>
             </div>
           </div>
-          <div className="card" style={{ width: "220px", height: "250px;" }}>
-            <img src={Ian} className="card-img-top" alt="..." />
+          <div className="card col-md-3">
+            <img src={Ian} style={{height:'300px',backgroundSize: 'cover'}} className="card-img-top img-responsive" alt="..." />
             <div className="card-body">
               <p className="card-text">Afriansyah</p>
               <small>Full Stack</small>
             </div>
           </div>
-          <div className="card" style={{ width: "220px", height: "250px;" }}>
-            <img src={Nico} className="card-img-top" alt="..." />
+          <div className="card col-md-3">
+            <img src={Nico} style={{height:'300px',backgroundSize: 'cover'}} className="card-img-top img-responsive" alt="..." />
             <div className="card-body">
               <p className="card-text">Nico Husin</p>
               <small>Full Stack</small>
             </div>
           </div>
-          <div className="card" style={{ width: "220px", height: "250px;" }}>
-            <img src={Ido} className="card-img-top" alt="..." />
+          <div className="card col-md-3">
+            <img src={Ido} style={{height:'300px',backgroundSize: 'cover'}}className="card-img-top img-responsive" alt="..." />
             <div className="card-body">
-              <p className="card-text">Ridho</p>
+              <p className="card-text">Ridho AM</p>
               <small>Full Stack (Team Leader)</small>
             </div>
           </div>
+        </div>
         </div>
         <hr />
         <br />
         <br />
         <br />
 
-        <div className="isiContainerFooter">
+          <div className="container-fluid wow fadeInUp">
           <div className="containerTechnology">
             <ul>
               <div className="isiContainerTechnology">
@@ -230,9 +236,10 @@ class About extends Component {
               </div>
             </ul>
           </div>
-          <div className="containerPatner"></div>
+          
         </div>
-      </div>
+        </div>
+      
     );
   }
 }

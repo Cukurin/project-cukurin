@@ -6,11 +6,13 @@ import {
   ADD_BARBERSHOP
 } from "./ActionTypes";
 
-const API = process.env.REACT_APP_API_HOST;
+// const API = process.env.REACT_APP_API_HOST;
+// production
+const SERVER = process.env.REACT_APP_API_SERVER;
 
 export const getAllBarbershop = () => async dispatch => {
   try {
-    let allBarbershops = await axios.get(`${API}/barbershop`);
+    let allBarbershops = await axios.get(`${SERVER}/barbershop`);
 
     if (allBarbershops.status === 200) {
       dispatch({ type: GET_ALL_BARBERSHOPS, payload: allBarbershops.data });
@@ -22,7 +24,7 @@ export const getAllBarbershop = () => async dispatch => {
 
 export const getOneBarbershop = (id, history) => async dispatch => {
   try {
-    let barbershop = await axios.get(`${API}/barbershop/${id}`);
+    let barbershop = await axios.get(`${SERVER}/barbershop/${id}`);
 
     const { _id } = this.props.shops;
 
@@ -37,7 +39,7 @@ export const getOneBarbershop = (id, history) => async dispatch => {
 
 export const addBarberShop = (values, history) => {
   axios
-    .post(`${API}/barbershop`, values)
+    .post(`${SERVER}/barbershop`, values)
     .then(result => {
       history.push("/");
     })
