@@ -47,20 +47,25 @@ class Profile extends React.Component {
                       <thead>
                         <tr>
                           <th>No</th>
-                          <th>Barbershop Name</th>
-                          <th>Booking Schedule</th>
-                          <th>Services</th>
+                          <th>Barbershop</th>
+                          <th>Time</th>
+                          <th>Date</th>
+                          <th>Service</th>
                         </tr>
                       </thead>
                       <tbody>
                         {Array.isArray(this.props.userData.appointments) &&
                           this.props.userData.appointments.map((object, i) => {
                             console.log(object);
+                            let date =  new Date(object.date)
+                            let fullDate = `${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()}`
+                            let time = `${date.getHours()}:${date.getMinutes()}`
                             return [
                               <tr key={i}>
                                 <th scope="col">{i + 1}</th>
                                 <td>{object.barbershop.name}</td>
-                                <td>{object.createdAt}</td>
+                                <td>{time}</td>
+                                <td>{fullDate}</td>
                                 <td>{object.service}</td>
                               </tr>
                             ];
