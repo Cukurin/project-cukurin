@@ -41,7 +41,7 @@ export const addBarberShop = (values, history) => {
   axios
     .post(`${SERVER}/barbershop`, values)
     .then(result => {
-      history.push("/");
+      history.push("/search");
     })
     .catch(error => {
       console.log(error);
