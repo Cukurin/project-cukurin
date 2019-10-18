@@ -90,7 +90,10 @@ class AppointmentModal extends React.Component {
                   name="date"
                   selected={this.state.date}
                   onChange={this.handleChange}
-                  dateFormat="yyyy-M-dd"
+                  // dateFormat="yyyy-M-dd"
+                  dateFormat="MMM d, yyyy h:mm aa"
+                  showTimeSelect
+                  timeFormat="HH:mm"
                 />
               </div>
 
