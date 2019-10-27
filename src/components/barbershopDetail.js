@@ -2,16 +2,51 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getBarberShop } from "../store/actions";
 import AppointmentModal from "./appointmentModal";
-import Comment from './Comment'
+import { withRouter } from "react-router-dom";
+import { addComment } from '../store/actions/comment'
+import Cookies from "js-cookie";
 
 class barbershopDetail extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      comment: '',
+      barbershop: '',
+      user: ''
+    }
+  }
   componentDidMount() {
     this.props.getBarberShop(this.props.match.params.id);
   }
+  
+  handleForm = event => {
+    this.setState({
+      ...this.state,
+      [event.target.name]: event.target.value
+    })
+    console.log(this.props);
+    
+  }
+  handleSubmit = event => {
+    event.preventDefault();
+    if(Cookies.get('token')) {
+    const values = {
+      ...this.state,
+      user: this.props.user._id,
+      barbershop: this.props.barbershop._id
+    }
+    console.log(values);
+    // const barbershopId = this.props.match.params.id;
+    this.props.dispatch(addComment({...values}, this.props.history))
+  }else {
+    this.props.history.push('/login')
+    }
+    
+}
 
   render() {
     const {
-      barbershop: { address, name, imageUrl, services, phoneNumber }
+      barbershop: { address, name, imageUrl, services, phoneNumber, comment, date }
     } = this.props.barbershop;
 
     const style = {
@@ -93,10 +128,24 @@ class barbershopDetail extends Component {
             </h6>
           </div>
           <br/>
+          <hr/>
+          
+          <div className="">
+            Comments :
+            {Array.isArray(comment) &&
+              comment.map(comm => {
+                return <li key={name}>{comm}</li>;
+              })}
+            {date}
+          </div>
+          <hr/>
+          <br/>
           <h5>Add a Comments :</h5>
-          <Comment/>
-
-
+          <div>
+        <label htmlFor="comment"></label>
+        <textarea onChange={this.handleForm}  name="comment" id="comment" cols="90" rows="5"></textarea>
+        <button onClick={this.handleSubmit} className="btn btn-warning"> Post Comment </button>
+      </div>
         </div>
       </div>
     );
@@ -105,17 +154,18 @@ class barbershopDetail extends Component {
 
 const mapStateToProps = state => {
   return {
-    barbershop: state.barbershop
+    barbershop: state.barbershop,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    getBarberShop: id => dispatch(getBarberShop(id))
+    getBarberShop: id => dispatch(getBarberShop(id)),
+    addComment: (values, history) => dispatch(addComment(values, history))
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
-  mapDispatchToProps
-)(barbershopDetail);
+ mapDispatchToProps
+)(barbershopDetail));

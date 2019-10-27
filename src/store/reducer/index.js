@@ -5,6 +5,7 @@ import GetUserName from './getUserName'
 import getBarberShop from './getBarberShop'
 import getAllBarberShops from './getAllBarberShop'
 import addBarberShop from './addBarberShop'
+import addComment from './comment'
 
 const allReducers = combineReducers({
   Register,
@@ -12,7 +13,8 @@ const allReducers = combineReducers({
   GetUserName,
   barbershop: getBarberShop,
   shops: getAllBarberShops,
-  addBarberShop
+  addBarberShop,
+  addComment
 
 });
 

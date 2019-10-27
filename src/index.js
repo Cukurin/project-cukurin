@@ -16,6 +16,7 @@ import allReducers from "./store/reducer";
 import thunk from "redux-thunk";
 import barbershopDetail from "./components/barbershopDetail";
 import About from './components/About';
+import comment from './components/Comment'
 
 
 const Main = withRouter(({ location }) => {
@@ -30,6 +31,7 @@ const Main = withRouter(({ location }) => {
       <Route path="/profile" component={Profile}/>
       <Route path="/register" component={Register} />
       <Route path="/about" component={About} />
+      <Route path="/comment" component={comment} />
       <Route path="/barbershop/:id" component={barbershopDetail}/>
       {location.pathname !== "/login" && location.pathname !== "/register" 
       && (
