@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getBarberShop } from "../store/actions";
 import AppointmentModal from "./appointmentModal";
+import Comment from './Comment'
 
 class barbershopDetail extends Component {
   componentDidMount() {
@@ -65,7 +66,7 @@ class barbershopDetail extends Component {
           <div>
             {Array.isArray(services) &&
               services.map(service => {
-                return <li key={name}>{service}</li>;
+                return <li key={services}>{service}</li>;
               })}
           </div>
 
@@ -91,7 +92,11 @@ class barbershopDetail extends Component {
               {address} - {phoneNumber}
             </h6>
           </div>
-          <div className="map" style={{ width: "100%" }}></div>
+          <br/>
+          <h5>Add a Comments :</h5>
+          <Comment/>
+
+
         </div>
       </div>
     );

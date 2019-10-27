@@ -20,7 +20,7 @@ class About extends Component {
       address: "",
       phoneNumber: "",
       imageUrl: "",
-      services: ""
+      services: []
     };
   }
 
@@ -131,17 +131,18 @@ class About extends Component {
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="services">Service</label>
+                      <label htmlFor="services">Services</label>
                       <input
                         id="services"
                         type="text"
                         name="services"
                         className="form-control"
-                        placeholder="Enter one service..."
+                        placeholder="-"
                         defaultValue={this.state.services}
                         onChange={this.handleChange}
                         required
                       />
+                  
                     </div>
 
                     <div className="form-group ">
