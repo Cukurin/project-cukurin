@@ -9,7 +9,9 @@ import { Table } from "reactstrap";
 class Profile extends React.Component {
   componentDidMount() {
     this.props.getUserAction(this.props.history);
+    console.log(this.props, 'props');
   }
+  
   constructor(props) {
     super(props);
     this.state = { show: false };

@@ -5,6 +5,7 @@ import AppointmentModal from "./appointmentModal";
 import { withRouter } from "react-router-dom";
 import { addComment } from '../store/actions/comment'
 import Cookies from "js-cookie";
+import Popular from './popular'
 
 class barbershopDetail extends Component {
   constructor(props) {
@@ -16,7 +17,8 @@ class barbershopDetail extends Component {
     }
   }
   componentDidMount() {
-    this.props.getBarberShop(this.props.match.params.id);
+    this.props.getBarberShop(this.props.match.params.id)
+    
   }
   
   handleForm = event => {
@@ -146,6 +148,9 @@ class barbershopDetail extends Component {
         <textarea onChange={this.handleForm}  name="comment" id="comment" cols="90" rows="5"></textarea>
         <button onClick={this.handleSubmit} className="btn btn-warning"> Post Comment </button>
       </div>
+        </div>
+        <div>
+          <Popular/>
         </div>
       </div>
     );
