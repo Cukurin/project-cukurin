@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Background from "../assets/bgtop.jpg";
+import Background from "../assets/bgtop-min.jpg";
 import "./css/header.css";
 import { Flip } from "react-reveal";
 import {Link} from 'react-router-dom'
