@@ -1,5 +1,5 @@
 import React from "react";
-import Background from "../assets/form.jpg";
+import Background from "../assets/form-min.jpg";
 import { Link, withRouter } from "react-router-dom";
 import { RegisterUser } from "../store/actions";
 import { connect } from "react-redux";
